@@ -32,21 +32,15 @@ const Header = () => {
                         <div className='hidden md:flex items-center gap-4'>
                             {
                                 headerNavLinks.items.map((link) => (
-                                    <Link key={link.href} className='text-base font-semibold text-muted-foreground hover:text-foreground transition-colors' href={link.href}>{link.label}</Link>
+                                    <Link key={link.href} className='text-base font-semibold capitalize text-muted-foreground hover:text-foreground transition-colors' href={link.href}>{link.label}</Link>
                                 ))
                             }
                         </div>
                     </nav>
                     <div className='flex items-center gap-2 md:gap-4'>
-                        {/* <div className='block md:hidden'>
-                            <Button aria-label='Search' className='cursor-pointer' variant={"outline"} size={'icon'}><SearchIcon /></Button>
-                        </div> */}
-                        {/* <div className='hidden md:flex'>
-                            <Input variant={'double'} aria-label='Search' type='search' icon={<SearchIcon />} placeholder='Search' />
-                        </div> */}
                         <ThemeToggle variant='ghost' />
                         <Button aria-label='GitHub Link & Stars Counter' variant={"ghost"} size={"icon"} className='overflow-hidden relative group'>
-                            <Link href={"https://github.com/ameghcoder/fysk"} className='w-fit flex items-center gap-2'>
+                            <Link href={"https://github.com/ameghcoder/fysk"} target='_blank' className='w-fit flex items-center gap-2'>
                                 <span className='sr-only'>Star on GitHub</span>
                                 <GithubIcon className='fill-background invert-100 size-6!' />
                             </Link>
@@ -96,7 +90,7 @@ const AestheticHeader = () => {
                     </nav>
                     <div className='flex items-center gap-4'>
                         <Button aria-label='GitHub Link & Stars Counter' variant={"link"} size={'sm'} className='overflow-hidden relative group rounded-full'>
-                            <Link href={"https://github.com/"} className='w-fit flex items-center gap-2'>
+                            <Link href={"https://github.com/ameghcoder/fysk"} target='_blank' className='w-fit flex items-center gap-2'>
                                 <Star className='fill-yellow-200 stroke-yellow-200' />
                                 <span>Star on GitHub</span>
                             </Link>
