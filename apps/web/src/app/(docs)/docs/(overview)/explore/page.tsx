@@ -1,0 +1,44 @@
+import React from 'react'
+import atomLinks from '@/db/atoms.json'
+import { Card, CardContent, Typography } from '@fysk/ui'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "Explore Components - Fysk",
+    description: "Browse all available Fysk atoms and components.",
+}
+
+const Explore = () => {
+    return (
+        <div className="flex flex-col gap-8 w-full max-w-5xl">
+            <div>
+                <Typography variant="h1" className="mb-4">Explore Components</Typography>
+                <Typography variant="lead">
+                    A comprehensive list of all available atoms and primitives in the Fysk library.
+                </Typography>
+            </div>
+
+            {atomLinks.map((section, idx) => (
+                <div key={idx} className="space-y-6">
+                    <Typography variant="h2" className="capitalize border-b border-border pb-2">{section.heading}</Typography>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {section.items.map((item) => (
+                            <Link key={item.href} href={item.href} className="group no-underline">
+                                <Card className="hover:bg-muted/50 transition-colors border-border/60">
+                                    <CardContent className="p-4 flex items-center justify-between">
+                                        <Typography className="font-medium capitalize m-0">{item.label}</Typography>
+                                        <ArrowRight className="h-4 w-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-muted-foreground" />
+                                    </CardContent>
+                                </Card>
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            ))}
+        </div>
+    )
+}
+
+export default Explore

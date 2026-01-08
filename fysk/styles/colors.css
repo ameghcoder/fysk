@@ -1,0 +1,110 @@
+:root {
+    /* --- Base Colors --- */
+    --background: 1.000 0.000 89.876;
+    --foreground: 0.141 0.004 285.824;
+
+    /* --- Surface Containers --- */
+    --card: 1.000 0.000 89.876;
+    --card-foreground: 0.141 0.004 285.824;
+    --popover: 1.000 0.000 89.876;
+    --popover-foreground: 0.141 0.004 285.824;
+
+    /* --- Brand / Actions (Zinc Premium Gray) --- */
+    --primary: 0.210 0.006 285.884;
+    --primary-foreground: 0.985 0.000 89.876;
+
+    --secondary: 0.968 0.001 286.375;
+    --secondary-foreground: 0.210 0.006 285.884;
+
+    --muted: 0.968 0.001 286.375;
+    --muted-foreground: 0.552 0.014 285.942;
+
+    --accent: 0.968 0.001 286.375;
+    --accent-foreground: 0.210 0.006 285.884;
+
+    /* --- UI Feedback --- */
+    --success: 0.723 0.192 149.583;
+    --success-foreground: 0.987 0.004 160.130;
+
+    --warning: 0.770 0.165 70.606;
+    --warning-foreground: 0.281 0.056 94.463;
+
+    --destructive: 0.637 0.208 25.326;
+    --destructive-foreground: 0.985 0.000 89.876;
+
+    --info: 0.678 0.148 238.104;
+    --info-foreground: 0.965 0.021 229.054;
+
+    /* --- Borders & Inputs --- */
+    --border: 0.920 0.004 286.320;
+    --input: 0.920 0.004 286.320;
+    --ring: 0.210 0.006 285.884;
+
+    /* --- Special Dashboard Elements --- */
+    --sidebar: 0.985 0.000 89.876;
+    --sidebar-foreground: 0.370 0.012 285.801;
+    --sidebar-primary: 0.210 0.006 285.884;
+    --sidebar-primary-foreground: 0.985 0.000 89.876;
+    --sidebar-accent: 0.968 0.001 286.375;
+    --sidebar-accent-foreground: 0.210 0.006 285.884;
+    --sidebar-border: 0.928 0.006 264.531;
+    --sidebar-ring: 0.210 0.006 285.884;
+
+    /* --- Gradient Endpoints --- */
+    --gradient-info-end: 0.552 0.228 260.851;
+    --gradient-success-end: 0.690 0.148 162.368;
+    --gradient-warning-end: 0.707 0.186 48.129;
+    --gradient-error-end: 0.579 0.214 27.166;
+    --gradient-primary-end: 0.542 0.245 293.016;
+}
+
+.dark {
+    /* --- 1. Base Colors (OLED Deep Black) --- */
+    --background: 0.112 0.003 285.830;
+    --foreground: 0.985 0.000 89.876;
+
+    /* --- 2. Surface Containers --- */
+    --card: 0.142 0.004 285.819;
+    --card-foreground: 0.985 0.000 89.876;
+    --popover: 0.142 0.004 285.819;
+    --popover-foreground: 0.985 0.000 89.876;
+
+    /* --- 3. Brand / Actions (Zinc Silver) --- */
+    --primary: 0.985 0.000 89.876;
+    --primary-foreground: 0.210 0.006 285.884;
+
+    --secondary: 0.234 0.004 286.062;
+    --secondary-foreground: 0.985 0.000 89.876;
+
+    --muted: 0.234 0.004 286.062;
+    --muted-foreground: 0.712 0.013 286.068;
+
+    --accent: 0.234 0.004 286.062;
+    --accent-foreground: 0.985 0.000 89.876;
+
+    /* --- 4. UI Feedback --- */
+    --destructive: 0.396 0.133 25.721;
+    --destructive-foreground: 0.985 0.000 89.876;
+
+    /* --- 5. Borders & Inputs --- */
+    --border: 0.274 0.005 286.033;
+    --input: 0.274 0.005 286.033;
+    --ring: 0.871 0.005 286.285;
+
+    /* --- 6. Sidebar --- */
+    --sidebar: 0.142 0.004 285.819;
+    --sidebar-foreground: 0.985 0.000 89.876;
+    --sidebar-primary: 0.985 0.000 89.876;
+    --sidebar-primary-foreground: 0.210 0.006 285.884;
+    --sidebar-accent: 0.234 0.004 286.062;
+    --sidebar-accent-foreground: 0.985 0.000 89.876;
+    --sidebar-border: 0.274 0.005 286.033;
+    --sidebar-ring: 0.871 0.005 286.285;
+
+    /* --- 8. Gradient Endpoints (Dark) --- */
+    --gradient-info-end: 0.384 0.151 260.467;
+    --gradient-success-end: 0.500 0.105 163.070;
+    --gradient-warning-end: 0.534 0.146 46.811;
+    --gradient-error-end: 0.443 0.163 27.135;
+    --gradient-primary-end: 0.376 0.203 288.128;
+}

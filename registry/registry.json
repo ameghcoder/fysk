@@ -1,0 +1,334 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "fysk",
+    "homepage": "https://fysk.dev",
+    "items": [
+        {
+            "name": "avatar",
+            "type": "registry:ui",
+            "title": "Avatar",
+            "description": "An image element with a fallback for representing the user.",
+            "dependencies": [
+                "@radix-ui/react-avatar",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/avatar.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "badge",
+            "type": "registry:ui",
+            "title": "Badge",
+            "description": "Displays a badge or a component that looks like a badge with mutliple variants.",
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/badge.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "title": "Button",
+            "description": "Standard button with multiple variants with built in state handling.",
+            "dependencies": [
+                "@radix-ui/react-slot",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "empty",
+            "type": "registry:ui",
+            "title": "Empty State",
+            "description": "A placeholder for when there is no data to display.",
+            "dependencies": [
+                "lucide-react",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/empty.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "form",
+            "type": "registry:ui",
+            "title": "Form",
+            "description": "Building forms with React Hook Form and Zod.",
+            "dependencies": [
+                "@radix-ui/react-label",
+                "@radix-ui/react-slot",
+                "lucide-react",
+                "react-hook-form"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/form.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "input",
+            "type": "registry:ui",
+            "title": "Input",
+            "description": "Displays a form input field that handles state for you.",
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/input.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "input-otp",
+            "type": "registry:ui",
+            "title": "Input OTP",
+            "description": "Accessible one-time password component with copy paste functionality.",
+            "dependencies": [
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/input-otp.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "kbd",
+            "type": "registry:ui",
+            "title": "Kbd",
+            "description": "A Kbd component for keyboard key display, it auto-detects the command key (⌘ on Mac, Ctrl on Windows, etc.) and displays the appropriate symbol.",
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/kbd.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "pagination",
+            "type": "registry:ui",
+            "title": "Pagination",
+            "description": "Pagination with page navigation, next and previous links.",
+            "dependencies": [
+                "lucide-react",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json",
+                "button"
+            ],
+            "files": [
+                {
+                    "path": "fysk/pagination.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "progress",
+            "type": "registry:ui",
+            "title": "Progress component",
+            "description": "Progress component",
+            "dependencies": [
+                "@radix-ui/react-progress",
+                "class-variance-authority",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/progress.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "select",
+            "type": "registry:ui",
+            "title": "Select",
+            "description": "Displays a list of options for the user to pick from—triggered by a button.",
+            "dependencies": [
+                "@radix-ui/react-select",
+                "@radix-ui/react-popover",
+                "lucide-react"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/fysk-provider.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/select.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "switch",
+            "type": "registry:ui",
+            "title": "Switch",
+            "description": "A control that allows the user to toggle between checked and not checked.",
+            "dependencies": [
+                "@radix-ui/react-switch",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/switch.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tabs",
+            "type": "registry:ui",
+            "title": "Tabs",
+            "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+            "dependencies": [
+                "@radix-ui/react-tabs"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/tabs.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "textarea",
+            "type": "registry:ui",
+            "title": "Textarea",
+            "description": "An advance textarea component with auto-size and header/footer support, built on top of Radix UI.",
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/textarea.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "tooltip",
+            "type": "registry:ui",
+            "title": "Tooltip",
+            "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+            "dependencies": [
+                "@radix-ui/react-tooltip",
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils",
+                "https://fysk.dev/r/kbd.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/tooltip.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "name": "typography",
+            "type": "registry:ui",
+            "title": "Typography",
+            "description": "Standard typography component.",
+            "dependencies": [
+                "class-variance-authority"
+            ],
+            "registryDependencies": [
+                "utils"
+            ],
+            "files": [
+                {
+                    "path": "fysk/typography.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        },
+        {
+            "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+            "name": "fysk-provider",
+            "type": "registry:component",
+            "description": "Global provider for Fysk components.",
+            "dependencies": [
+                "lucide-react"
+            ],
+            "files": [
+                {
+                    "path": "fysk/fysk-provider.tsx",
+                    "type": "registry:component",
+                    "content": "\"use client\"\nimport * as React from \"react\"\nimport { Check, AlertCircle, AlertTriangle, Info, Loader, ChevronDown, ChevronUp } from \"lucide-react\"\n\nexport type FyskIconPosition = \"start\" | \"end\"\n\nexport interface FyskIcons {\n    loading?: React.ReactNode\n    success?: React.ReactNode\n    error?: React.ReactNode\n    warning?: React.ReactNode\n    info?: React.ReactNode,\n    chevronDown?: React.ReactNode,\n    chevronUp?: React.ReactNode,\n}\n\nexport interface FyskConfig {\n    icons?: FyskIcons\n    iconPosition?: FyskIconPosition\n}\n\nconst defaultIcons: Required<FyskIcons> = {\n    loading: <Loader className=\"animate-spin\" />,\n    success: <Check />,\n    error: <AlertCircle />,\n    warning: <AlertTriangle />,\n    info: <Info />,\n    chevronDown: <ChevronDown />,\n    chevronUp: <ChevronUp />,\n}\n\nconst FyskContext = React.createContext<FyskConfig>({\n    icons: defaultIcons,\n    iconPosition: \"start\",\n})\n\nexport function useFyskConfig() {\n    return React.useContext(FyskContext)\n}\n\nexport interface FyskProviderProps extends FyskConfig {\n    children: React.ReactNode\n}\n\nexport function FyskProvider({\n    children,\n    icons,\n    iconPosition = \"start\",\n}: FyskProviderProps) {\n    const value = React.useMemo(\n        () => ({\n            icons: { ...defaultIcons, ...icons },\n            iconPosition,\n        }),\n        [icons, iconPosition]\n    )\n\n    return <FyskContext.Provider value={value}>{children}</FyskContext.Provider>\n}\n"
+                }
+            ]
+        }
+    ]
+}

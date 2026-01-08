@@ -1,0 +1,22 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "pagination",
+    "title": "Pagination",
+    "type": "registry:ui",
+    "description": "Pagination with page navigation, next and previous links.",
+    "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json",
+        "button"
+    ],
+    "files": [
+        {
+            "path": "fysk/pagination.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

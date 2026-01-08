@@ -1,20 +1,38 @@
 {
-  "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@registry/json": ["../../fysk/registry/registry.json"],
+      "@/components/fysk-provider": ["../../fysk/atoms/react/provider/fysk-provider.tsx"],
+      "@/components/fysk/*": ["../../fysk/atoms/react/radix/*"],
+      "@fysk/ui": ["../../fysk/index.ts"]
+    }
   },
   "include": [
+    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "next-env.d.ts",
-    "next.config.js",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+, "tailwind.config.js", "src/app/(docs)/docs/atoms/react/popover.mdx", "src/app/(docs)/docs/atoms/react/button-group.mdx"  ],
+  "exclude": ["node_modules"]
 }

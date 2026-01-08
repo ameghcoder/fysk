@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "baseUrl": ".",
+    "paths": {
+      "@/lib/*": ["./fysk/lib/*"],
+      "@/components/fysk-provider": ["./fysk/atoms/react/provider/fysk-provider.tsx"],
+      "@/components/fysk/*": ["./fysk/atoms/react/radix/*"],
+      "@fysk/ui": ["./fysk/index.ts"]
+    },
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "apps/web/tailwind.config.js", "apps/web/src/app/(docs)/docs/atoms/react/popover.mdx", "apps/web/src/app/(docs)/docs/atoms/react/button-group.mdx"],
+  "exclude": ["node_modules", "dist"]
+}

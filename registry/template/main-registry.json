@@ -1,0 +1,22 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry.json",
+    "name": "fysk",
+    "homepage": "https://fysk.dev",
+    "items": [
+        {
+            "name": "button",
+            "type": "registry:ui",
+            "title": "Fysk Button",
+            "description": "A simple button with built-in state feature.",
+            "registryDependencies": [
+                "https://fysk.dev/r/button.json"
+            ],
+            "files": [
+                {
+                    "path": "fysk/button.tsx",
+                    "type": "registry:ui"
+                }
+            ]
+        }
+    ]
+}

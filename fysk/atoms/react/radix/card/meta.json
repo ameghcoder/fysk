@@ -1,0 +1,21 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "card",
+    "title": "Card",
+    "type": "registry:ui",
+    "description": "Displays a card with header, content, and footer.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/card.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "ignore": true
+}

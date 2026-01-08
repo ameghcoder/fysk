@@ -1,0 +1,103 @@
+---
+title: "Textarea"
+description: "A multi-line text input component with support for visual variants, auto-sizing, and custom header/footer slots."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Textarea"
+  file="textarea"
+  basePath="../../fysk/atoms/react/radix/textarea"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "filled", "double", "ghost", "deep"],
+      default: "filled",
+    },
+    glow: { type: "boolean", default: false },
+    autoSize: { type: "boolean", default: false },
+  }}
+>
+
+  <TextareaDemo placeholder="Describe your experience..." />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/textarea.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Textarea } from "@/components/ui"
+
+<Textarea placeholder="Type message here." />`}
+/>
+
+## Examples
+
+### Auto-Sizing
+
+The textarea automatically adjusts its height based on the content length.
+
+<ComponentPreview file="textarea-example-autosize-01">
+  <TextareaAutosize />
+</ComponentPreview>
+
+### Rich Structure
+
+Use the `header` and `footer` props to create fully featured text editors or comment boxes.
+
+<ComponentPreview file="textarea-example-toolbar-01">
+  <TextareaToolbar01 />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="auto-resize">
+      <Typography variant="strong">Auto-Resize:</Typography> Built-in logic to
+      expand height dynamically with a configurable{" "}
+      <Typography variant="inlineCode">maxHeight</Typography>.
+    </Typography>,
+    <Typography key="advanced-layout">
+      <Typography variant="strong">Advanced Layout:</Typography> Slots for{" "}
+      <Typography variant="inlineCode">header</Typography> and{" "}
+      <Typography variant="inlineCode">footer</Typography> allow for integrated
+      toolbars and labels.
+    </Typography>,
+    <Typography key="visual-styles">
+      <Typography variant="strong">Visual Styles:</Typography> Includes{" "}
+      <Typography variant="inlineCode">filled</Typography>,{" "}
+      <Typography variant="inlineCode">ghost</Typography>, and{" "}
+      <Typography variant="inlineCode">deep</Typography> (inset shadow) variants
+      for various UI contexts.
+    </Typography>,
+    <Typography key="glow-mode">
+      <Typography variant="strong">Glow Mode:</Typography> Optional soft
+      pulse/border glow for focused input states.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop        | Type         | Default     | Description                                        |
+| ----------- | ------------ | ----------- | -------------------------------------------------- |
+| `variant`   | `string`     | `"default"` | Visual style: `filled`, `double`, `ghost`, `deep`. |
+| `autoSize`  | `boolean`    | `false`     | Dynamically adjust height to fit content.          |
+| `maxHeight` | `number`     | -           | Limit for auto-resizing height in pixels.          |
+| `header`    | `React.Node` | -           | Slot for elements above the text area.             |
+| `footer`    | `React.Node` | -           | Slot for elements below the text area.             |
+| `glow`      | `boolean`    | `false`     | Enable a subtle glowing border/shadow effect.      |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML textarea attributes.
+</Typography>

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "form",
+    "title": "Form",
+    "type": "registry:ui",
+    "description": "Building forms with React Hook Form and Zod.",
+    "dependencies": [
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot",
+        "lucide-react",
+        "react-hook-form"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/form.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

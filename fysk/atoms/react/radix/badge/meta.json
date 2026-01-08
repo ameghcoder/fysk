@@ -1,0 +1,20 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "badge",
+    "title": "Badge",
+    "type": "registry:ui",
+    "description": "Displays a badge or a component that looks like a badge with mutliple variants.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/badge.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+---
+title: "Switch"
+description: "A control that allows the user to toggle between checked and unchecked states."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Switch"
+  file="switch"
+  basePath="../../fysk/atoms/react/radix/switch"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["normal", "square", "line"],
+      default: "normal",
+    },
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+      default: "md",
+    },
+    disabled: { type: "boolean", default: false },
+  }}
+>
+  <Switch />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/switch.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Switch } from "@/components/ui"
+
+<Switch />`}
+/>
+
+## Examples
+
+### Default
+
+Standard switch with a label.
+
+<ComponentPreview file="switch-example-default-01">
+  <SwitchDemo />
+</ComponentPreview>
+
+### Variants & Sizes
+
+Explore different shapes like `square` or `line` across multiple sizes.
+
+<ComponentPreview file="switch-example-variants-01">
+  <SwitchVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="multiple-styles">
+      <Typography variant="strong">Multiple Styles:</Typography> Supports
+      classic rounded, modern square, and minimalist{" "}
+      <Typography variant="inlineCode">line</Typography> variants.
+    </Typography>,
+    <Typography key="size-options">
+      <Typography variant="strong">Size Options:</Typography> Consistent scaling
+      through <Typography variant="inlineCode">sm</Typography>,{" "}
+      <Typography variant="inlineCode">md</Typography>, and{" "}
+      <Typography variant="inlineCode">lg</Typography> configurations.
+    </Typography>,
+    <Typography key="state-animations">
+      <Typography variant="strong">State Animations:</Typography> Smooth
+      transitions for handle position and background color changes.
+    </Typography>,
+    <Typography key="accessible">
+      <Typography variant="strong">Accessible:</Typography> Built on Radix
+      Switch for proper ARIA roles and keyboard interaction.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop      | Type                             | Default    | Description                           |
+| --------- | -------------------------------- | ---------- | ------------------------------------- |
+| `variant` | `"normal" \| "square" \| "line"` | `"normal"` | The visual shape/style of the switch. |
+| `size`    | `"sm" \| "md" \| "lg"`           | `"md"`     | The size of the switch.               |
+
+<Typography variant="blockquote">
+  Accepts all standard props from Radix UI Switch.
+</Typography>

@@ -1,0 +1,121 @@
+---
+title: "Typography"
+description: "A comprehensive set of components for consistent text styling across the application."
+---
+
+import { Typography } from "@fysk/ui";
+
+## Preview
+
+<ComponentPreview
+  name="Typography"
+  file="typography"
+  basePath="../../fysk/atoms/react/radix/typography"
+  controls={{
+    variant: {
+      type: "select",
+      options: [
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "p",
+        "blockquote",
+        "lead",
+        "large",
+        "small",
+        "muted",
+        "strong",
+        "inlineCode",
+      ],
+      default: "p",
+    },
+  }}
+>
+  <TypographyProvider>
+    <Typography>The quick brown fox jumps over the lazy dog.</Typography>
+  </TypographyProvider>
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/typography.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Typography } from "@/components/ui"
+
+<Typography variant="h1">Heading</Typography>
+<Typography variant="p">Body text.</Typography>`}
+/>
+
+## Examples
+
+### Default
+
+Standard body and heading layout.
+
+<ComponentPreview file="typography-example-default-01">
+  <div className="flex flex-col gap-2">
+    <Typography variant="h2">The Chronicles</Typography>
+    <Typography variant="p">Once upon a time...</Typography>
+  </div>
+</ComponentPreview>
+
+### Advanced Variants
+
+Showcasing lists, blockquotes, and inline code.
+
+<ComponentPreview file="typography-example-variants-01">
+  <TypographyVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="semantic-html">
+      <Typography variant="strong">Semantic HTML:</Typography> Dynamically
+      switches the underlying HTML element (e.g.,{" "}
+      <Typography variant="inlineCode">h1</Typography>,{" "}
+      <Typography variant="inlineCode">p</Typography>,{" "}
+      <Typography variant="inlineCode">blockquote</Typography>,{" "}
+      <Typography variant="inlineCode">code</Typography>) based on the selected
+      variant.
+    </Typography>,
+    <Typography key="responsive-sizing">
+      <Typography variant="strong">Responsive Sizing:</Typography> Heading
+      variants come with pre-configured fluid typography (e.g.,{" "}
+      <Typography variant="inlineCode">h1</Typography> transitions between sizes
+      on mobile/desktop).
+    </Typography>,
+    <Typography key="data-driven">
+      <Typography variant="strong">Data Driven Lists:</Typography> The `list`
+      variant accepts a `data` array prop for cleaner JSX when rendering bullet
+      points.
+    </Typography>,
+    <Typography key="consistent-spacing">
+      <Typography variant="strong">Consistent Spacing:</Typography> Built-in
+      margin handling for standard document flow (e.g., `:not(:first-child)`
+      logic for paragraphs and headers).
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop      | Type           | Default | Description                                      |
+| --------- | -------------- | ------- | ------------------------------------------------ |
+| `variant` | `string`       | `"p"`   | Visual style and semantic mapping.               |
+| `as`      | `ElementType`  | -       | Manual override for the underlying HTML element. |
+| `data`    | `React.Node[]` | -       | Array of items to render when `variant="list"`.  |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML attributes for the underlying element.
+</Typography>

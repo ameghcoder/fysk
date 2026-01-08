@@ -1,0 +1,20 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "input",
+    "title": "Input",
+    "type": "registry:ui",
+    "description": "Displays a form input field that handles state for you.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/input.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

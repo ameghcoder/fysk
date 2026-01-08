@@ -1,0 +1,78 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "progress",
+    "title": "Progress component",
+    "type": "registry:ui",
+    "description": "Progress component",
+    "dependencies": [
+        "@radix-ui/react-progress",
+        "class-variance-authority",
+        "lucide-react"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/progress.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "cssVars": {
+        "theme": {
+            "animate-shimmer": "shimmer 2s infinite",
+            "animate-indeterminate": "indeterminate 1.5s ease-in-out infinite",
+            "animate-stripe-move": "stripe-move 1s linear infinite",
+            "animate-blink": "blink 1.5s ease-in-out infinite"
+        }
+    },
+    "tailwind": {
+        "config": {
+            "theme": {
+                "extend": {
+                    "keyframes": {
+                        "shimmer": {
+                            "0%": {
+                                "transform": "translateX(-100%)"
+                            },
+                            "100%": {
+                                "transform": "translateX(100%)"
+                            }
+                        },
+                        "blink": {
+                            "0%, 100%": {
+                                "opacity": "1"
+                            },
+                            "50%": {
+                                "opacity": "0"
+                            }
+                        },
+                        "indeterminate": {
+                            "0%": {
+                                "transform": "translateX(-100%)"
+                            },
+                            "100%": {
+                                "transform": "translateX(400%)"
+                            }
+                        },
+                        "stripe-move": {
+                            "0%": {
+                                "background-position": "0 0"
+                            },
+                            "100%": {
+                                "background-position": "calc(var(--stripe-size, 20px) * 2) 0"
+                            }
+                        }
+                    },
+                    "animation": {
+                        "shimmer": "shimmer 2s infinite",
+                        "blink": "blink 1.5s ease-in-out infinite",
+                        "indeterminate": "indeterminate 1.5s ease-in-out infinite",
+                        "stripe-move": "stripe-move 1s linear infinite"
+                    }
+                }
+            }
+        }
+    }
+}

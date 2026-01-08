@@ -1,0 +1,116 @@
+---
+title: "Input"
+description: "A flexible and premium text input component with support for icons, state handling, and multiple visual variants."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Input"
+  file="input"
+  basePath="../../fysk/atoms/react/radix/input"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "filled", "double", "ghost", "deep"],
+      default: "default",
+    },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+    disabled: { type: "boolean", default: false },
+    type: { type: "text", default: "text" },
+  }}
+>
+
+  <InputDemo placeholder="Type something..." className="max-w-sm" />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/input.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Input } from "@/components/ui"
+
+<Input type="email" placeholder="Email" />`}
+/>
+
+## Examples
+
+### With Icons
+
+Add visual context with icons at the start or end of the input field.
+
+<ComponentPreview file="input-example-icons-01">
+  <div className="flex flex-col gap-4">
+    <Input placeholder="Search" icon={<Search className="size-4" />} />
+    <Input
+      placeholder="Email"
+      icon={<Mail className="size-4" />}
+      iconPosition="end"
+    />
+  </div>
+</ComponentPreview>
+
+### Variants
+
+Explore multiple visual styles suited for different backgrounds and levels of prominence.
+
+<ComponentPreview file="input-example-variants-01">
+  <InputVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="icon-support">
+      <Typography variant="strong">Icon Support:</Typography> Integrated slots
+      for <Typography variant="inlineCode">start</Typography> or{" "}
+      <Typography variant="inlineCode">end</Typography> positioned icons with
+      automatic padding adjustment.
+    </Typography>,
+    <Typography key="visual-variants">
+      <Typography variant="strong">Visual Variants:</Typography> Supports{" "}
+      <Typography variant="inlineCode">filled</Typography>,{" "}
+      <Typography variant="inlineCode">double</Typography> (bordered),{" "}
+      <Typography variant="inlineCode">ghost</Typography>, and{" "}
+      <Typography variant="inlineCode">deep</Typography> (inset shadow) styles.
+    </Typography>,
+    <Typography key="state-feedback">
+      <Typography variant="strong">State Feedback:</Typography> Built-in visual
+      states for <Typography variant="inlineCode">loading</Typography>,{" "}
+      <Typography variant="inlineCode">success</Typography>, and{" "}
+      <Typography variant="inlineCode">error</Typography> using icons and
+      colors.
+    </Typography>,
+    <Typography key="micro-animations">
+      <Typography variant="strong">Micro-Animations:</Typography> Smooth focus
+      transitions and background shifts.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop           | Type                                          | Default     | Description                                        |
+| -------------- | --------------------------------------------- | ----------- | -------------------------------------------------- |
+| `variant`      | `string`                                      | `"default"` | Visual style: `filled`, `double`, `ghost`, `deep`. |
+| `state`        | `"idle" \| "loading" \| "success" \| "error"` | `"idle"`    | Overlays an icon based on state.                   |
+| `icon`         | `React.Node`                                  | -           | Primary icon to display.                           |
+| `iconPosition` | `"start" \| "end"`                            | `"start"`   | Where to place the icon.                           |
+| `iconLoading`  | `React.Node`                                  | -           | Custom loader icon override.                       |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML input attributes.
+</Typography>

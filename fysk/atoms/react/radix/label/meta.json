@@ -1,0 +1,21 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "label",
+    "title": "Label",
+    "type": "registry:ui",
+    "description": "Renders an accessible label associated with controls.",
+    "dependencies": [
+        "@radix-ui/react-label",
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/label.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "ignore": true
+}

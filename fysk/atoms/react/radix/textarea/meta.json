@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "textarea",
+    "title": "Textarea",
+    "type": "registry:ui",
+    "description": "An advance textarea component with auto-size and header/footer support, built on top of Radix UI.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/textarea.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

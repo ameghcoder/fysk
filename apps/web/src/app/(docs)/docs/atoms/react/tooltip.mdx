@@ -1,0 +1,169 @@
+---
+title: "Tooltip"
+description: "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Tooltip"
+  file="tooltip"
+  basePath="../../fysk/atoms/react/radix/tooltip"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "outline", "glass", "glow", "neon"],
+      default: "default",
+    },
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+      default: "md",
+    },
+    title: {
+      type: "text",
+      default: "Title",
+    },
+    description: {
+      type: "text",
+      default: "Description",
+    },
+    skipDelayDuration: {
+      type: "number",
+      default: 100,
+    },
+    delayDuration: {
+      type: "number",
+      default: 300,
+    },
+    shortcut: {
+      type: "text",
+      default: "⌘+I",
+    },
+    side: {
+      type: "select",
+      options: ["top", "bottom", "left", "right"],
+      default: "top",
+    },
+    showArrow: { type: "boolean", default: true },
+  }}
+>
+  <TooltipDemo />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/tooltip.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui"
+...
+<Tooltip>
+    <TooltipTrigger>Hover</TooltipTrigger>
+    <TooltipContent>
+      <p>Add to library</p>
+    </TooltipContent>
+</Tooltip>`}
+/>
+
+## Examples
+
+### Default
+
+Standard tooltip with a text label.
+
+<ComponentPreview
+  language="tsx"
+  code={`import {
+    Button,
+    Tooltip,
+    TooltipContent,
+    TooltipTrigger,
+} from "@fysk/ui"
+...
+<Tooltip>
+    <TooltipTrigger asChild>
+        <Button variant="secondary">Hover</Button>
+    </TooltipTrigger>
+    <TooltipContent>
+        <p>Add to library</p>
+    </TooltipContent>
+</Tooltip>`}
+>
+  <TooltipDemo />
+</ComponentPreview>
+
+### Rich Content
+
+Tooltips with titles, descriptions, and keyboard shortcuts.
+
+<ComponentPreview file="tooltip-example-rich-01">
+  <TooltipDemo
+    title="Information"
+    description="This is a detailed description of what this button does."
+    shortcut="mod+S"
+    variant="glass"
+  >
+    <Button variant="secondary">View Analytics →</Button>
+  </TooltipDemo>
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="rich-tooltips">
+      <Typography variant="strong">Rich Tooltips:</Typography> Support for{" "}
+      <Typography variant="inlineCode">title</Typography>,{" "}
+      <Typography variant="inlineCode">description</Typography>, and{" "}
+      <Typography variant="inlineCode">shortcut</Typography> keys
+      out-of-the-box.
+    </Typography>,
+    <Typography key="visual-variants">
+      <Typography variant="strong">Visual Variants:</Typography> Includes{" "}
+      <Typography variant="inlineCode">glass</Typography> (frosted),{" "}
+      <Typography variant="inlineCode">glow</Typography>, and{" "}
+      <Typography variant="inlineCode">neon</Typography> styles for premium
+      aesthetics.
+    </Typography>,
+    <Typography key="smart-formatting">
+      <Typography variant="strong">Smart Formatting:</Typography> Automatically
+      renders shortcuts using the{" "}
+      <Typography variant="inlineCode">Kbd</Typography> component with
+      variant-aware styling.
+    </Typography>,
+    <Typography key="radix-based">
+      <Typography variant="strong">Radix Based:</Typography> Best-in-class
+      collision detection and positioning.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+### TooltipContent
+
+| Prop                      | Type                 | Default     | Description                                                      |
+| ------------------------- | -------------------- | ----------- | ---------------------------------------------------------------- |
+| `variant`                 | `string`             | `"default"` | Visual style: `outline`, `glass`, `glow`, `neon`.                |
+| `title`                   | `React.Node`         | -           | Primary bold heading in the tooltip.                             |
+| `description`             | `React.Node`         | -           | Supporting text below the title.                                 |
+| `shortcut`                | `string \| string[]` | -           | Keyboard shortcut to display (e.g. `mod+K`).                     |
+| `showArrow`               | `boolean`            | `true`      | Whether to display the indicator arrow.                          |
+| `side`                    | `string`             | `top`       | Position of the tooltip.                                         |
+| `size`                    | `string`             | `md`        | Size of the tooltip, sizes: `sm`, `md`, `lg`.                    |
+| `sideOffset`              | `number`             | `4`         | Offset of the tooltip.                                           |
+| `delayDuration`           | `number`             | `700`       | Delay duration in milliseconds before the tooltip is shown.      |
+| `skipDelayDuration`       | `number`             | `300`       | Skip delay duration in milliseconds before the tooltip is shown. |
+| `disableHoverableContent` | `boolean`            | `false`     | Disable hoverable content.                                       |
+
+<Typography variant="blockquote">
+  Accepts all standard props from Radix UI Tooltip.
+</Typography>

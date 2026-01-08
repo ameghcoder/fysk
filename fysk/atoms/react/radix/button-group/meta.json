@@ -1,0 +1,21 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "button-group",
+    "title": "Button Group",
+    "type": "registry:ui",
+    "description": "A group of buttons.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/button.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/button-group.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "ignore": true
+}

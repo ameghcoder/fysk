@@ -1,0 +1,20 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "popover",
+    "title": "Popover",
+    "type": "registry:ui",
+    "description": "Popover component based on Radix UI.",
+    "dependencies": [
+        "@radix-ui/react-popover"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/popover.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "ignore": true
+}

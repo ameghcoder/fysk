@@ -1,3 +1,34 @@
 packages:
-  - "apps/*"
-  - "packages/*"
+  - apps/*
+  - packages/*
+  - fysk/**
+  - registry/**
+
+catalogs:
+  default:
+    '@types/node': ^20.0.0
+    '@types/react': 19.2.7
+    '@types/react-dom': 19.2.3
+    class-variance-authority: 0.7.1
+    clsx: 2.1.1
+    lucide-react: 0.425.0
+    react: 19.2.3
+    react-dom: 19.2.3
+    tailwind-merge: 3.4.0
+    tailwindcss: ^4.1.18
+    tailwindcss-animate: ^1.0.7
+    typescript: ^5.9.3
+  dev:
+    prettier: ^3.7.4
+    turbo: ^2.7.1
+  tooling:
+    '@types/fs-extra': ^11.0.4
+    fs-extra: ^11.3.3
+    tsx: ^4.21.0
+
+ignoredBuiltDependencies:
+  - esbuild
+
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver

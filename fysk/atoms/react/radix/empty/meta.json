@@ -1,0 +1,20 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "empty",
+    "title": "Empty State",
+    "type": "registry:ui",
+    "description": "A placeholder for when there is no data to display.",
+    "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/empty.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

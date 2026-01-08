@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "kbd",
+    "title": "Kbd",
+    "type": "registry:ui",
+    "description": "A Kbd component for keyboard key display, it auto-detects the command key (⌘ on Mac, Ctrl on Windows, etc.) and displays the appropriate symbol.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/kbd.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

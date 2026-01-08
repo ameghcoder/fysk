@@ -1,0 +1,73 @@
+[
+    {
+        "heading": "atoms",
+        "for": "react-radix",
+        "path": "react/radix",
+        "items": [
+            {
+                "label": "avatar",
+                "href": "/docs/atoms/react/avatar"
+            },
+            {
+                "label": "badge",
+                "href": "/docs/atoms/react/badge"
+            },
+            {
+                "label": "button",
+                "href": "/docs/atoms/react/button"
+            },
+            {
+                "label": "empty",
+                "href": "/docs/atoms/react/empty"
+            },
+            {
+                "label": "form",
+                "href": "/docs/atoms/react/form"
+            },
+            {
+                "label": "input",
+                "href": "/docs/atoms/react/input"
+            },
+            {
+                "label": "input-otp",
+                "href": "/docs/atoms/react/input-otp"
+            },
+            {
+                "label": "kbd",
+                "href": "/docs/atoms/react/kbd"
+            },
+            {
+                "label": "pagination",
+                "href": "/docs/atoms/react/pagination"
+            },
+            {
+                "label": "progress",
+                "href": "/docs/atoms/react/progress"
+            },
+            {
+                "label": "select",
+                "href": "/docs/atoms/react/select"
+            },
+            {
+                "label": "switch",
+                "href": "/docs/atoms/react/switch"
+            },
+            {
+                "label": "tabs",
+                "href": "/docs/atoms/react/tabs"
+            },
+            {
+                "label": "textarea",
+                "href": "/docs/atoms/react/textarea"
+            },
+            {
+                "label": "tooltip",
+                "href": "/docs/atoms/react/tooltip"
+            },
+            {
+                "label": "typography",
+                "href": "/docs/atoms/react/typography"
+            }
+        ]
+    }
+]

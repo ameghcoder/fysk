@@ -1,0 +1,21 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "separator",
+    "title": "Separator",
+    "type": "registry:ui",
+    "description": "Visually or semantically separates content.",
+    "dependencies": [
+        "@radix-ui/react-separator"
+    ],
+    "registryDependencies": [
+        "utils",
+        "https://fysk.dev/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/separator.tsx",
+            "type": "registry:ui",
+            "content": "import * as React from \"react\"\r\nimport * as SeparatorPrimitive from \"@radix-ui/react-separator\"\r\nimport { cn } from \"@/lib/utils\"\r\n\r\nconst Separator = React.forwardRef<\r\n    React.ComponentRef<typeof SeparatorPrimitive.Root>,\r\n    React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>\r\n>(\r\n    (\r\n        { className, orientation = \"horizontal\", decorative = true, ...props },\r\n        ref\r\n    ) => (\r\n        <SeparatorPrimitive.Root\r\n            ref={ref}\r\n            decorative={decorative}\r\n            orientation={orientation}\r\n            style={\r\n                orientation === \"horizontal\"\r\n                    ? { height: \"1px\", width: \"100%\" }\r\n                    : { height: \"100%\", width: \"1px\" }\r\n            }\r\n            className={cn(\r\n                \"shrink-0 bg-border\",\r\n                className\r\n            )}\r\n            {...props}\r\n        />\r\n    )\r\n)\r\nSeparator.displayName = SeparatorPrimitive.Root.displayName\r\n\r\nexport { Separator }\r\n"
+        }
+    ]
+}

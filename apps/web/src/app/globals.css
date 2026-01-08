@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@import "../../../../fysk/styles/primitives.css";
+
+@source "../../src/**/*.{js,ts,jsx,tsx,astro,md,mdx}";
+@source "../../../../fysk/atoms/**/*.{js,ts,jsx,tsx}";
+@source "../../../../fysk/components/**/*.{js,ts,jsx,tsx}";
+@source "../../../../fysk/templates/**/*.{js,ts,jsx,tsx}";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-background: oklch(1.000 0.000 89.876);
+  --color-foreground: oklch(0.141 0.004 285.824);
+  --color-card: oklch(1.000 0.000 89.876);
+  --color-card-foreground: oklch(0.141 0.004 285.824);
+  --color-popover: oklch(1.000 0.000 89.876);
+  --color-popover-foreground: oklch(0.141 0.004 285.824);
+  --color-primary: oklch(0.216 0.006 56.043);
+  --color-primary-foreground: oklch(0.985 0.001 106.423);
+  --color-secondary: oklch(0.97 0.001 106.424);
+  --color-secondary-foreground: oklch(0.216 0.006 56.043);
+  --color-muted: oklch(0.97 0.001 106.424);
+  --color-muted-foreground: oklch(0.553 0.013 58.071);
+  --color-accent: oklch(0.97 0.001 106.424);
+  --color-accent-foreground: oklch(0.216 0.006 56.043);
+  --color-destructive: oklch(0.577 0.245 27.325);
+  --color-border: oklch(0.923 0.003 48.717);
+  --color-input: oklch(0.923 0.003 48.717);
+  --color-ring: oklch(0.709 0.01 56.259);
+  --color-sidebar: oklch(0.985 0.001 106.423);
+  --color-sidebar-foreground: oklch(0.147 0.004 49.25);
+  --color-sidebar-primary: oklch(0.216 0.006 56.043);
+  --color-sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --color-sidebar-accent: oklch(0.97 0.001 106.424);
+  --color-sidebar-accent-foreground: oklch(0.216 0.006 56.043);
+  --color-sidebar-border: oklch(0.923 0.003 48.717);
+  --color-sidebar-ring: oklch(0.709 0.01 56.259);
+}
+
+.dark {
+  --color-background: oklch(0.147 0.004 49.25);
+  --color-foreground: oklch(0.985 0.001 106.423);
+  --color-card: oklch(0.216 0.006 56.043);
+  --color-card-foreground: oklch(0.985 0.001 106.423);
+  --color-popover: oklch(0.216 0.006 56.043);
+  --color-popover-foreground: oklch(0.985 0.001 106.423);
+  --color-primary: oklch(0.923 0.003 48.717);
+  --color-primary-foreground: oklch(0.216 0.006 56.043);
+  --color-secondary: oklch(0.268 0.007 34.298);
+  --color-secondary-foreground: oklch(0.985 0.001 106.423);
+  --color-muted: oklch(0.268 0.007 34.298);
+  --color-muted-foreground: oklch(0.709 0.01 56.259);
+  --color-accent: oklch(0.268 0.007 34.298);
+  --color-accent-foreground: oklch(0.985 0.001 106.423);
+  --color-destructive: oklch(0.704 0.191 22.216);
+  --color-border: oklch(1 0 0 / 10%);
+  --color-input: oklch(1 0 0 / 15%);
+  --color-ring: oklch(0.553 0.013 58.071);
+  --color-sidebar: oklch(0.216 0.006 56.043);
+  --color-sidebar-foreground: oklch(0.985 0.001 106.423);
+  --color-sidebar-primary: oklch(0.488 0.243 264.376);
+  --color-sidebar-primary-foreground: oklch(0.985 0.001 106.423);
+  --color-sidebar-accent: oklch(0.268 0.007 34.298);
+  --color-sidebar-accent-foreground: oklch(0.985 0.001 106.423);
+  --color-sidebar-border: oklch(1 0 0 / 10%);
+  --color-sidebar-ring: oklch(0.553 0.013 58.071);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-family: var(--font-suse-sans);
+}
+
+/* --- Table Styles --- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.875rem;
+  overflow-x: hidden;
+
+  max-width: max-content;
+}
+
+thead {
+  tr {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-muted-foreground);
+    text-transform: none;
+  }
+}
+
+tbody {
+  tr {
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: var(--color-accent);
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  td {
+    padding: 0.75rem 1rem;
+    color: var(--color-foreground);
+  }
+}
+
+tfoot {
+  tr {
+    border-top: 1px solid var(--color-border);
+  }
+
+  th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 500;
+    color: var(--color-muted-foreground);
+  }
+}
+
+code {
+  @apply bg-muted px-1.5 py-0.5 rounded text-[0.85rem] font-mono font-medium text-foreground;
+}

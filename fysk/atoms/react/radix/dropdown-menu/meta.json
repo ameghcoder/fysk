@@ -1,0 +1,23 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "dropdown-menu",
+    "title": "Dropdown Menu",
+    "type": "registry:ui",
+    "description": "Displays a menu to the user—such as a set of actions or functions—triggered by a button.",
+    "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "class-variance-authority",
+        "lucide-react"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/kbd.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/dropdown-menu.tsx",
+            "type": "registry:ui"
+        }
+    ],
+    "ignore": true
+}

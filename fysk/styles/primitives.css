@@ -1,0 +1,106 @@
+@theme {
+    --animate-shimmer: shimmer 2s infinite;
+    --animate-indeterminate: indeterminate 1.5s ease-in-out infinite;
+    --animate-stripe-move: stripe-move 1s linear infinite;
+    --animate-blink: blink 1.5s ease-in-out infinite;
+    --animate-accordion-down: accordion-down 0.2s ease-out;
+    --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@theme {
+    /* Fysk Component Colors var */
+    --color-gradient-info-end: oklch(0.552 0.228 260.851);
+    --color-gradient-success-end: oklch(0.690 0.148 162.368);
+    --color-gradient-warning-end: oklch(0.707 0.186 48.129);
+    --color-gradient-error-end: oklch(0.579 0.214 27.166);
+    --color-gradient-primary-end: oklch(0.542 0.245 293.016);
+    /* --- UI Feedback --- */
+    --color-success: oklch(0.723 0.192 149.583);
+    --color-success-foreground: oklch(0.987 0.004 160.130);
+
+    --color-warning: oklch(0.770 0.165 70.606);
+    --color-warning-foreground: oklch(0.281 0.056 94.463);
+
+    --color-destructive: oklch(0.637 0.208 25.326);
+    --color-destructive-foreground: oklch(0.985 0.000 89.876);
+
+    --color-info: oklch(0.678 0.148 238.104);
+    --color-info-foreground: oklch(0.965 0.021 229.054);
+}
+
+.dark {
+    /* --- 4. UI Feedback --- */
+    --color-destructive: oklch(0.396 0.133 25.721);
+    --color-destructive-foreground: oklch(0.985 0.000 89.876);
+
+    /* Fysk Component Colors var */
+    --color-gradient-info-end: oklch(0.384 0.151 260.467);
+    --color-gradient-success-end: oklch(0.500 0.105 163.070);
+    --color-gradient-warning-end: oklch(0.534 0.146 46.811);
+    --color-gradient-error-end: oklch(0.443 0.163 27.135);
+    --color-gradient-primary-end: oklch(0.376 0.203 288.128);
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes indeterminate {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(400%);
+    }
+}
+
+@keyframes stripe-move {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: calc(var(--stripe-size, 20px) * 2) 0;
+    }
+}
+
+@keyframes accordion-down {
+    from {
+        height: 0;
+    }
+
+    to {
+        height: var(--radix-accordion-content-height);
+    }
+}
+
+@keyframes accordion-up {
+    from {
+        height: var(--radix-accordion-content-height);
+    }
+
+    to {
+        height: 0;
+    }
+}
