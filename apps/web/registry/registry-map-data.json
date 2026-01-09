@@ -1,0 +1,19 @@
+{
+    "avatar": "avatar.json",
+    "badge": "badge.json",
+    "button": "button.json",
+    "empty": "empty.json",
+    "form": "form.json",
+    "input": "input.json",
+    "input-otp": "input-otp.json",
+    "kbd": "kbd.json",
+    "pagination": "pagination.json",
+    "progress": "progress.json",
+    "select": "select.json",
+    "switch": "switch.json",
+    "tabs": "tabs.json",
+    "textarea": "textarea.json",
+    "tooltip": "tooltip.json",
+    "typography": "typography.json",
+    "fysk-provider": "fysk-provider.json"
+}

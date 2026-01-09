@@ -27,6 +27,14 @@ const overviewLinks: LinkGroups[] = [
             {
                 label: "Explore",
                 href: "/docs/explore"
+            },
+            {
+                label: "Fysk Provider",
+                href: "/docs/provider/fysk-provider"
+            },
+            {
+                label: "+ Request a Component",
+                href: "/docs/request-a-component"
             }
         ]
     }
@@ -43,12 +51,11 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                     <Sidebar className='md:bg-transparent border-transparent h-[calc(100svh-3.5rem)] top-14 pb-4'>
                         <SidebarContent>
                             {
-                                <SidebarGroup key={headerNavLinks.heading}>
+                                <SidebarGroup className='block md:hidden' key={headerNavLinks.heading}>
                                     <SidebarGroupLabel>{headerNavLinks.heading}</SidebarGroupLabel>
                                     <SidebarGroupContent>
                                         {
                                             headerNavLinks.items.map((item, index) => {
-                                                console.log(item);
                                                 return <SidebarItem key={item.label + index} label={item.label} asChild>
                                                     <Link href={item.href} className='text-foreground! text-base! font-normal capitalize'>
                                                         {item.label}
@@ -57,9 +64,9 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                                             })
                                         }
                                     </SidebarGroupContent>
+                                    <Separator />
                                 </SidebarGroup>
                             }
-                            <Separator />
                             {
                                 [...overviewLinks, ...atomLinks].map((link, index) => (
                                     <SidebarGroup key={link.heading + index}>

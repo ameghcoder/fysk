@@ -3,8 +3,7 @@ import React, { useEffect } from 'react'
 import { LogoIconPNG } from './logo'
 import Link from 'next/link'
 import { Button, Separator } from '@fysk/ui'
-import { Menu, Star } from 'lucide-react'
-import GithubIcon from '../icons/github'
+import { Github, Menu, Star } from 'lucide-react'
 import ThemeToggle from './theme-toggle'
 import { useTheme } from 'next-themes'
 import { motion } from "framer-motion"
@@ -42,7 +41,7 @@ const Header = () => {
                         <Button aria-label='GitHub Link & Stars Counter' variant={"ghost"} size={"icon"} className='overflow-hidden relative group'>
                             <Link href={"https://github.com/ameghcoder/fysk"} target='_blank' className='w-fit flex items-center gap-2'>
                                 <span className='sr-only'>Star on GitHub</span>
-                                <GithubIcon className='fill-background invert-100 size-6!' />
+                                <Github className='size-4' />
                             </Link>
                         </Button>
                     </div>

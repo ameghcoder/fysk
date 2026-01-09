@@ -1,0 +1,16 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "fysk-provider",
+    "type": "registry:component",
+    "description": "Global provider for Fysk components.",
+    "dependencies": [
+        "lucide-react"
+    ],
+    "files": [
+        {
+            "path": "fysk/fysk-provider.tsx",
+            "type": "registry:component",
+            "content": "\"use client\"\r\nimport * as React from \"react\"\r\nimport { Check, AlertCircle, AlertTriangle, Info, Loader, ChevronDown, ChevronUp, X } from \"lucide-react\"\r\n\r\nexport type FyskIconPosition = \"start\" | \"end\"\r\n\r\nexport interface FyskIcons {\r\n    loading?: React.ReactNode\r\n    success?: React.ReactNode\r\n    error?: React.ReactNode\r\n    warning?: React.ReactNode\r\n    info?: React.ReactNode,\r\n    chevronDown?: React.ReactNode,\r\n    chevronUp?: React.ReactNode,\r\n    close?: React.ReactNode,\r\n}\r\n\r\nexport interface FyskConfig {\r\n    icons?: FyskIcons\r\n    iconPosition?: FyskIconPosition\r\n}\r\n\r\nconst defaultIcons: Required<FyskIcons> = {\r\n    loading: <Loader className=\"animate-spin\" />,\r\n    success: <Check />,\r\n    error: <AlertCircle />,\r\n    warning: <AlertTriangle />,\r\n    info: <Info />,\r\n    chevronDown: <ChevronDown />,\r\n    chevronUp: <ChevronUp />,\r\n    close: <X />\r\n}\r\n\r\nconst FyskContext = React.createContext<FyskConfig>({\r\n    icons: defaultIcons,\r\n    iconPosition: \"start\",\r\n})\r\n\r\nexport function useFyskConfig() {\r\n    return React.useContext(FyskContext)\r\n}\r\n\r\nexport interface FyskProviderProps extends FyskConfig {\r\n    children: React.ReactNode\r\n}\r\n\r\nexport function FyskProvider({\r\n    children,\r\n    icons,\r\n    iconPosition = \"start\",\r\n}: FyskProviderProps) {\r\n    const value = React.useMemo(\r\n        () => ({\r\n            icons: { ...defaultIcons, ...icons },\r\n            iconPosition,\r\n        }),\r\n        [icons, iconPosition]\r\n    )\r\n\r\n    return <FyskContext.Provider value={value}>{children}</FyskContext.Provider>\r\n}\r\n"
+        }
+    ]
+}

@@ -2,15 +2,24 @@ import SectionContainerWrapper from '@/components/section/section-wrapper'
 import { Typography } from '@fysk/ui'
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { OnThisPageHeadings } from '@/lib/mdx'
+import DocsMainContentWrapper from '@/components/section/docs-main-content-wrapper'
 
 export const metadata: Metadata = {
     title: "Getting Started - Fysk",
     description: "Learn how to get started with Fysk, a premium React UI component library with built-in state management.",
 }
 
+const toc: OnThisPageHeadings[] = [
+    { level: 2, text: 'Prerequisites', id: 'prerequisites' },
+    { level: 2, text: 'Why "Atoms"?', id: 'why-atoms' },
+    { level: 2, text: 'How it works', id: 'how-it-works' },
+    { level: 2, text: 'Next Steps', id: 'next-steps' },
+]
+
 const GettingStarted = () => {
     return (
-        <div className="flex flex-col gap-6 w-full max-w-4xl">
+        <DocsMainContentWrapper toc={toc}>
             <div>
                 <Typography variant="h1" className="mb-4">Getting Started</Typography>
                 <Typography variant="lead">
@@ -19,7 +28,7 @@ const GettingStarted = () => {
             </div>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">Prerequisites</Typography>
+                <Typography variant="h2" className="mb-4" id="prerequisites">Prerequisites</Typography>
                 <Typography className="mb-4">
                     Fysk is built for the modern React ecosystem. Before you begin, ensure you have a project set up with the following:
                 </Typography>
@@ -36,14 +45,14 @@ const GettingStarted = () => {
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">Why I named them &quot;Atoms&quot; instead of &quot;Components&quot;</Typography>
+                <Typography variant="h2" className="mb-4" id="why-atoms">Why I named them &quot;Atoms&quot; instead of &quot;Components&quot;</Typography>
                 <Typography>
                     Because, atoms are the smallest part of our universe, in the same way these components are the smallest part of our UI and designs.
                 </Typography>
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">How it works</Typography>
+                <Typography variant="h2" className="mb-4" id="how-it-works">How it works</Typography>
                 <Typography className="mb-4">
                     Fysk follows the <span className="italic">copy-paste</span> distribution method popularized by shadcn/ui.
                     Instead of installing a large dependencies,
@@ -60,12 +69,13 @@ const GettingStarted = () => {
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">Next Steps</Typography>
+                <Typography variant="h2" className="mb-4" id="next-steps">Next Steps</Typography>
                 <Typography>
                     Ready to start building? Head over to the <Link href="/docs/installation" className="text-primary hover:underline font-medium">Installation</Link> guide to configure your project.
                 </Typography>
             </SectionContainerWrapper>
-        </div>
+
+        </DocsMainContentWrapper>
     )
 }
 

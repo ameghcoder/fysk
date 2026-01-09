@@ -110,6 +110,7 @@ import KbdVariants from "@/components/examples/kbd-example-variants-01";
 import InputOTPVariants from "@/components/examples/input-otp-example-variants-01";
 import InputVariants from "@/components/examples/input-example-variants-01";
 import AvatarVariants from "@/components/examples/avatar-example-variants-01";
+import { JSXElementConstructor, ReactElement } from "react";
 
 // Dynamic path based on your requirement
 const DOCS_PATH = path.join(process.cwd(), "src/app/(docs)/docs/atoms/react");
@@ -123,6 +124,13 @@ function slugify(text: string) {
 }
 
 export type OnThisPageHeadings = { level: number; text: string; id: string }
+export type DocData = {
+  toc: OnThisPageHeadings[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  meta: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  content: ReactElement<unknown, string | JSXElementConstructor<any>>
+}
 
 function extractHeadings(content: string) {
   const headings: OnThisPageHeadings[] = [];

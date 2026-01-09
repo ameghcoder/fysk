@@ -4,6 +4,8 @@ import { Card, CardContent, Typography } from '@fysk/ui'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Metadata } from 'next'
+import { OnThisPageHeadings } from '@/lib/mdx'
+import DocsMainContentWrapper from '@/components/section/docs-main-content-wrapper'
 
 export const metadata: Metadata = {
     title: "Explore Components - Fysk",
@@ -11,8 +13,15 @@ export const metadata: Metadata = {
 }
 
 const Explore = () => {
+    // Generate toc from atomLinks sections
+    const toc: OnThisPageHeadings[] = atomLinks.map((section) => ({
+        level: 2,
+        text: section.heading.charAt(0).toUpperCase() + section.heading.slice(1),
+        id: section.heading.toLowerCase().replace(/\s+/g, '-'),
+    }))
+
     return (
-        <div className="flex flex-col gap-8 w-full max-w-5xl">
+        <DocsMainContentWrapper toc={toc}>
             <div>
                 <Typography variant="h1" className="mb-4">Explore Components</Typography>
                 <Typography variant="lead">
@@ -21,7 +30,7 @@ const Explore = () => {
             </div>
 
             {atomLinks.map((section, idx) => (
-                <div key={idx} className="space-y-6">
+                <div key={idx} className="space-y-6" id={section.heading.toLowerCase().replace(/\s+/g, '-')}>
                     <Typography variant="h2" className="capitalize border-b border-border pb-2">{section.heading}</Typography>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {section.items.map((item) => (
@@ -37,7 +46,7 @@ const Explore = () => {
                     </div>
                 </div>
             ))}
-        </div>
+        </DocsMainContentWrapper>
     )
 }
 

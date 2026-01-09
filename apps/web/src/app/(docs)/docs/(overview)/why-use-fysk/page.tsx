@@ -1,16 +1,23 @@
 import SectionContainerWrapper from '@/components/section/section-wrapper'
 import { Card, CardContent, CardHeader, CardTitle, Typography } from '@fysk/ui'
-import React from 'react'
 import { Metadata } from 'next'
+import { OnThisPageHeadings } from '@/lib/mdx'
+import DocsMainContentWrapper from '@/components/section/docs-main-content-wrapper'
 
 export const metadata: Metadata = {
     title: "Why Use Fysk? - Fysk",
     description: "Discover the philosophy behind Fysk: components with a built-in brain and aesthetic intelligence.",
 }
 
+const toc: OnThisPageHeadings[] = [
+    { level: 2, text: 'Components with a Brain', id: 'components-with-a-brain' },
+    { level: 2, text: 'Aesthetic Intelligence', id: 'aesthetic-intelligence' },
+    { level: 2, text: 'The "Copy Paste" Freedom', id: 'the-copy-paste-freedom' },
+]
+
 const WhyUseFysk = () => {
     return (
-        <div className="flex flex-col gap-6 w-full max-w-4xl">
+        <DocsMainContentWrapper toc={toc}>
             <div>
                 <Typography variant="h1" className="mb-4">Why Use Fysk?</Typography>
                 <Typography variant="lead">
@@ -20,7 +27,7 @@ const WhyUseFysk = () => {
             </div>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">Components with a Brain</Typography>
+                <Typography variant="h2" className="mb-4" id="components-with-a-brain">Components with a Brain</Typography>
                 <Typography className="mb-4">
                     In most libraries, a button is just a button. You have to manually wire up the loading spinners, disable states, success icons, and error handling every single time.
                 </Typography>
@@ -30,7 +37,7 @@ const WhyUseFysk = () => {
                 </Typography>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Card variant={'outline'}>
+                    <Card variant={'secondary'}>
                         <CardHeader>
                             <CardTitle>
                                 Smart States
@@ -43,7 +50,7 @@ const WhyUseFysk = () => {
                             </Typography>
                         </CardContent>
                     </Card>
-                    <Card variant={'outline'}>
+                    <Card variant={'secondary'}>
                         <CardHeader>
                             <CardTitle>
                                 Visual Feedback
@@ -59,7 +66,7 @@ const WhyUseFysk = () => {
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">Aesthetic Intelligence</Typography>
+                <Typography variant="h2" className="mb-4" id="aesthetic-intelligence">Aesthetic Intelligence</Typography>
                 <Typography>
                     Intelligence doesn&apos;t mean boring. Fysk combines this robust logic with a premium, glassmorphic design language.
                     We believe that internal dashboards and developer tools deserve the same level of polish as top-tier consumer products.
@@ -68,14 +75,14 @@ const WhyUseFysk = () => {
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
-                <Typography variant="h2" className="mb-4">The &quot;Copy Paste&quot; Freedom</Typography>
+                <Typography variant="h2" className="mb-4" id="the-copy-paste-freedom">The &quot;Copy Paste&quot; Freedom</Typography>
                 <Typography>
                     Despite the extra smarts, Fysk stays true to the shadcn/ui philosophy. You own the code.
                     Copy the component into your project and you have full control.
                     If the &quot;brain&quot; does something you don&apos;t like, just change it. You aren&apos;t fighting a compiled <Typography variant={"inlineCode"}>npm package;</Typography> you are extending your own codebase.
                 </Typography>
             </SectionContainerWrapper>
-        </div>
+        </DocsMainContentWrapper>
     )
 }
 

@@ -9,9 +9,7 @@ const PageClient = ({ slug }: { slug: string }) => {
         setIsSidebarOpened(false);
     }, [setIsSidebarOpened, slug])
 
-    return (
-        <div>PageClient</div>
-    )
+    return null
 }
 
 export default PageClient
