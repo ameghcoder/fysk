@@ -5,7 +5,7 @@ import { fileURLToPath } from "url"
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
-const ROOT = process.cwd()
+const ROOT = path.join(__dirname, "../../../")
 
 // Load environment variables (.env.local takes priority over .env)
 const envFiles = [".env", ".env.local"]
@@ -18,11 +18,31 @@ for (const file of envFiles) {
 
 const APP_URL = process.env.APP_URL || "http://localhost:3000"
 const RADIX_PATH = path.join(ROOT, "fysk/atoms/react/radix")
-const REGISTRY_DIR = path.join(ROOT, "registry")
+const REGISTRY_DIR = path.join(ROOT, "apps/web/registry")
+
 const COMPONENTS_DIR = path.join(REGISTRY_DIR, "components")
 const MAP_FILE = path.join(REGISTRY_DIR, "registry-map-data.json")
 const MAIN_REGISTRY_FILE = path.join(REGISTRY_DIR, "registry.json")
 const DOCS_ATOMS_DIR = path.join(ROOT, "apps/web/src/db/atoms.json")
+
+// Providers Path
+const FYSK_PROVIDER_PATH = path.join(RADIX_PATH, "../provider/fysk-provider.tsx")
+
+const FYSK_PROVIDER_REGISTRY_ITEM = {
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "fysk-provider",
+    "type": "registry:component",
+    "description": "Global provider for Fysk components.",
+    "dependencies": [
+        "lucide-react"
+    ],
+    "files": [
+        {
+            "path": "fysk/fysk-provider.tsx",
+            "type": "registry:component"
+        }
+    ]
+}
 
 function cleanJson(str) {
     // Remove BOM if present
@@ -84,7 +104,7 @@ async function buildRegistry() {
                             pathMap[meta.name] = `${meta.name}.json`
                         }
                     } else {
-                        console.warn(`  ⚠️ Warning: Implementation file not found for ${meta.name}: ${fullPath}`)
+                        console.warn(`⚠️ Warning: Implementation file not found for ${meta.name}: ${fullPath}`)
                     }
                 }
             }
@@ -114,14 +134,19 @@ async function buildRegistry() {
         }
     }
 
-    const providerPath = path.join(COMPONENTS_DIR, "fysk-provider.json")
 
-    if (fs.existsSync(providerPath)) {
+    if (fs.existsSync(FYSK_PROVIDER_PATH)) {
+        console.log("- Processing fysk-provider")
+        const providerData = fs.readFileSync(FYSK_PROVIDER_PATH, "utf8");
+        FYSK_PROVIDER_REGISTRY_ITEM.files[0].content = providerData;
+
+        fs.writeFileSync(path.join(COMPONENTS_DIR, "fysk-provider.json"), JSON.stringify(FYSK_PROVIDER_REGISTRY_ITEM, null, 4))
+
         console.log("- Adding fysk-provider to registry")
-        const providerData = JSON.parse(cleanJson(fs.readFileSync(providerPath, "utf8")))
-        items.push(providerData)
-
+        items.push(FYSK_PROVIDER_REGISTRY_ITEM);
         pathMap["fysk-provider"] = "fysk-provider.json"
+    } else {
+        console.log("- fysk-provider not found at ", FYSK_PROVIDER_PATH)
     }
 
     const mainRegistry = {

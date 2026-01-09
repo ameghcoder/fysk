@@ -2,7 +2,7 @@
   "name": "fysk",
   "private": true,
   "scripts": {
-    "build:registry": "pnpm --filter @fysk/core exec node build-registry.mjs",
+    "build:registry": "pnpm --filter @fysk/core exec node ./scripts/build-registry.mjs",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
