@@ -1,6 +1,5 @@
 import { Typography } from '@fysk/ui'
 import CodeBlock from '@/components/layout/code-block'
-import React from 'react'
 import Link from 'next/link'
 import CustomBullet from '@/components/icons/custom-bullet'
 import SectionContainerWrapper from '@/components/section/section-wrapper'
@@ -40,7 +39,7 @@ const Installation = () => {
                     Start by creating a new Next.js project using `create-next-app`.
                 </Typography>
                 <CodeBlock
-                    className='mb-2! h-auto!'
+                    className='mb-2!'
                     language="bash"
                     code={`npx create-next-app@latest my-app --typescript --tailwind --eslint`}
                 />
@@ -55,7 +54,7 @@ const Installation = () => {
                     Fysk is built on top of the shadcn/ui foundation. Run the `init` command to set up the base configuration, strict dependencies, and utility files.
                 </Typography>
                 <CodeBlock
-                    className='mb-2! h-auto!'
+                    className='mb-2!'
                     language="bash"
                     code={`npx shadcn@latest init`}
                 />

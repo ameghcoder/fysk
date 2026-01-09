@@ -48,7 +48,7 @@ const CodeBlock = ({ code, language = "TypeScript / React", variant = "default",
 
     return (
         <div ref={CodeBlockParentRef} className={cn(
-            "w-full relative group/code overflow-hidden flex flex-col mb-6 md:mb-12 mt-2 md:mt-4 h-full",
+            "w-full relative group/code overflow-hidden flex flex-col mb-6 md:mb-12 mt-2 md:mt-4 h-auto",
             variant === "default" ? "border border-border rounded-2xl shadow-sm bg-background" : "rounded-xl",
             className,
             isExpanded ? "max-h-full" : "max-h-[450px]"
