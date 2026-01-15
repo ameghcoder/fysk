@@ -1,0 +1,30 @@
+# Fysk UI
+
+Fysk is a premium UI component library for React, built with a focus on state management and aesthetics. It follows the copy-paste distribution model, giving you full ownership of the code.
+
+## Getting Started
+- [Installation Guide](https://fysk.dev/docs/installation): How to install and initialize Fysk
+- [Quick Start](https://fysk.dev/docs/quick-start): Code samples to get running
+- [Installation](https://fysk.dev/docs/installation): Installation process of component in users directory
+- [Fysk Provider](https://fysk.dev/docs/fysk-provider): The central nervous system of your application, providing global configuration for icons, animations, and consistent state for all Fysk components
+- [Fysk Hook](https://fysk.dev/docs/fysk-hook): The centralized animation control system for Fysk. Provides pre-computed transitions and variants for consistent, professional animations across all components.
+- [Why Fysk?](https://fysk.dev/docs/why-use-fysk): Architecture and philosophy
+
+## Components
+- [Component Index](https://fysk.dev/docs/explore): Overview of every component
+- [Avatar](https://fysk.dev/docs/components/react/avatar): An image element with a fallback for representing the user.
+- [Badge](https://fysk.dev/docs/components/react/badge): Displays a badge or a component that looks like a badge with mutliple variants.
+- [Button](https://fysk.dev/docs/components/react/button): Standard button with multiple variants with built in state handling.
+- [Empty State](https://fysk.dev/docs/components/react/empty): A placeholder for when there is no data to display.
+- [Form](https://fysk.dev/docs/components/react/form): Building forms with React Hook Form and Zod.
+- [Input](https://fysk.dev/docs/components/react/input): Displays a form input field that handles state for you.
+- [Input OTP](https://fysk.dev/docs/components/react/input-otp): Accessible one-time password component with copy paste functionality.
+- [Kbd](https://fysk.dev/docs/components/react/kbd): A Kbd component for keyboard key display, it auto-detects the command key (⌘ on Mac, Ctrl on Windows, etc.) and displays the appropriate symbol.
+- [Pagination](https://fysk.dev/docs/components/react/pagination): Pagination with page navigation, next and previous links.
+- [Progress component](https://fysk.dev/docs/components/react/progress): Progress component
+- [Select](https://fysk.dev/docs/components/react/select): Displays a list of options for the user to pick from—triggered by a button.
+- [Switch](https://fysk.dev/docs/components/react/switch): A control that allows the user to toggle between checked and not checked.
+- [Tabs](https://fysk.dev/docs/components/react/tabs): A set of layered sections of content—known as tab panels—that are displayed one at a time.
+- [Textarea](https://fysk.dev/docs/components/react/textarea): An advance textarea component with auto-size and header/footer support, built on top of Radix UI.
+- [Tooltip](https://fysk.dev/docs/components/react/tooltip): A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+- [Typography](https://fysk.dev/docs/components/react/typography): Standard typography component.

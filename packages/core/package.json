@@ -17,8 +17,8 @@
     },
     "exports": {
         ".": "./index.ts",
-        "./scripts/generate-Components.mjs": "./scripts/generate-Components.mjs"
+        "./scripts/generate-Components.mjs": "./scripts/generate-Components.mjs",
+        "./scripts/build-llm-txt.mjs": "./scripts/build-llm-txt.mjs",
+        "./scripts/build-sitemap.mjs": "./scripts/build-sitemap.mjs"
     }
 }
-
-

@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build:registry": "pnpm --filter @fysk/core exec node ./scripts/build-registry.mjs",
+    "build:llm-txt": "pnpm --filter @fysk/core exec node ./scripts/build-llm-txt.mjs",
+    "build:sitemap": "pnpm --filter @fysk/core exec node ./scripts/build-sitemap.mjs",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
@@ -76,4 +78,3 @@
     "vaul": "^1.1.2"
   }
 }
-
