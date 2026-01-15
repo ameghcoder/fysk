@@ -1,0 +1,63 @@
+.fysk-typography {
+    @apply text-foreground transition-colors duration-300;
+}
+
+.fysk-typography h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+}
+
+.fysk-typography h2 {
+    @apply scroll-m-20 border-b border-border pb-2 text-3xl font-semibold tracking-tight mt-6 transition-colors first:mt-0;
+}
+
+.fysk-typography h3 {
+    @apply scroll-m-20 text-2xl font-medium tracking-tight mt-4;
+}
+
+.fysk-typography h4 {
+    @apply scroll-m-20 text-xl font-normal tracking-tight mt-2;
+}
+
+.fysk-typography p {
+    @apply leading-7 text-foreground/75 not-first:mt-2 tracking-wide;
+}
+
+.fysk-typography blockquote {
+    @apply mt-6 border-l-2 pl-6 italic text-foreground/75;
+}
+
+.fysk-typography ul {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2 text-foreground/75;
+}
+
+.fysk-typography code {
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold text-foreground/75;
+}
+
+.fysk-typography table {
+    @apply w-full border-collapse border border-border mt-6 text-sm overflow-hidden rounded-lg;
+}
+
+.fysk-typography thead {
+    @apply bg-muted/50;
+}
+
+.fysk-typography th {
+    @apply border border-border p-3 text-left font-semibold;
+}
+
+.fysk-typography td {
+    @apply border border-border p-3 text-foreground/80;
+}
+
+.fysk-typography tr:nth-child(even) {
+    @apply bg-muted/20;
+}
+
+.fysk-typography strong {
+    @apply font-semibold text-foreground/75;
+}
+
+.fysk-typography small {
+    @apply text-sm font-medium leading-none text-foreground/75;
+}

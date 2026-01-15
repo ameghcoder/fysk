@@ -1,3 +1,4 @@
+'use client'
 import {
     Select,
     SelectContent,
@@ -8,10 +9,18 @@ import {
     SelectValue,
 } from "@fysk/ui"
 
-export default function SelectDemo() {
+interface SelectDemoProps {
+    className?: string
+    variant?: "default" | "outline" | "ghost" | "glass"
+    state?: "idle" | "loading" | "success" | "error"
+    selection?: "single" | "multiple"
+    disabled?: boolean
+}
+
+export default function SelectDemo({ className, variant, state, selection, disabled }: SelectDemoProps) {
     return (
-        <Select>
-            <SelectTrigger className="w-[180px]">
+        <Select selection={selection} disabled={disabled}>
+            <SelectTrigger className={className ?? "w-[180px]"} variant={variant} state={state}>
                 <SelectValue placeholder="Select a fruit" />
             </SelectTrigger>
             <SelectContent>

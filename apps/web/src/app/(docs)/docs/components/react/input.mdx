@@ -1,0 +1,163 @@
+---
+title: "Input"
+description: "A flexible and Polished text input component with support for icons, state handling, and multiple visual variants."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Input"
+  previewClassName="max-w-xs"
+  file="input"
+  basePath="/registry/components/input"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "filled", "double", "ghost", "deep", "glass"],
+      default: "default",
+    },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+    disabled: { type: "boolean", default: false },
+    type: { type: "text", default: "text" },
+  }}
+>
+
+  <InputDemo placeholder="Type something..." />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/input.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Input } from "@/components/ui"
+
+<Input type="email" placeholder="Email" />`}
+/>
+
+## Examples
+
+### With Icons
+
+Add visual context with icons at the start or end of the input field.
+
+<ComponentPreview file="input-example-icons-01">
+  <div className="flex flex-col gap-4">
+    <Input placeholder="Search" icon={<Search className="size-4" />} />
+    <Input
+      placeholder="Email"
+      icon={<Mail className="size-4" />}
+      iconPosition="end"
+    />
+  </div>
+</ComponentPreview>
+
+### Interactive Icons
+
+You can add a callback to icons using the `onIconClick` prop. This is perfect for password toggles, search clears, or custom actions.
+
+<ComponentPreview file="input-example-interactive-01">
+  <InputInteractiveIcon />
+</ComponentPreview>
+
+### Variants
+
+Explore multiple visual styles suited for different backgrounds and levels of prominence.
+
+<ComponentPreview file="input-example-variants-01">
+  <InputVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="icon-support">
+      <Typography variant="strong">Icon Support:</Typography> Integrated slots
+      for <Typography variant="inlineCode">start</Typography> or{" "}
+      <Typography variant="inlineCode">end</Typography> positioned icons with
+      automatic padding adjustment.
+    </Typography>,
+    <Typography key="visual-variants">
+      <Typography variant="strong">Visual Variants:</Typography> Supports{" "}
+      <Typography variant="inlineCode">filled</Typography>,{" "}
+      <Typography variant="inlineCode">double</Typography> (bordered),{" "}
+      <Typography variant="inlineCode">ghost</Typography>,{" "}
+      <Typography variant="inlineCode">deep</Typography> (inset shadow), and{" "}
+      <Typography variant="inlineCode">glass</Typography> (frosted glass)
+      styles.
+    </Typography>,
+    <Typography key="interactive-icons">
+      <Typography variant="strong">Interactive Icons:</Typography> Add click
+      actions to icons using the{" "}
+      <Typography variant="inlineCode">onIconClick</Typography> prop,
+      transforming the icon into an accessible button.
+    </Typography>,
+    <Typography key="state-feedback">
+      <Typography variant="strong">State Feedback:</Typography> Built-in visual
+      states for <Typography variant="inlineCode">loading</Typography>,{" "}
+      <Typography variant="inlineCode">success</Typography>, and{" "}
+      <Typography variant="inlineCode">error</Typography> using icons and
+      colors.
+    </Typography>,
+    <Typography key="micro-animations">
+      <Typography variant="strong">Micro-Animations:</Typography> Smooth focus
+      transitions and background shifts.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop           | Type                                          | Default     | Description                                                 |
+| -------------- | --------------------------------------------- | ----------- | ----------------------------------------------------------- |
+| `variant`      | `string`                                      | `"default"` | Visual style: `filled`, `double`, `ghost`, `deep`, `glass`. |
+| `state`        | `"idle" \| "loading" \| "success" \| "error"` | `"idle"`    | Overlays an icon based on state.                            |
+| `icon`         | `React.Node`                                  | -           | Primary icon to display.                                    |
+| `iconPosition` | `"start" \| "end"`                            | `"start"`   | Where to place the icon.                                    |
+| `iconLoading`  | `React.Node`                                  | -           | Custom loader icon override.                                |
+| `iconSuccess`  | `React.Node`                                  | -           | Custom success icon override.                               |
+| `iconError`    | `React.Node`                                  | -           | Custom error icon override.                                 |
+| `onIconClick`  | `(e: MouseEvent) => void`                     | -           | Callback to make the icon interactive.                      |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML input attributes.
+</Typography>
+
+## Changelog
+
+### 2026-01-12
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="interactive-icons">
+      <Typography variant="strong">Interactive Icons:</Typography> Added
+      `onIconClick` prop to support clickable icons (e.g., password toggle).
+    </Typography>,
+    <Typography key="glass-variant">
+      <Typography variant="strong">Glass Variant:</Typography> Introduced
+      `glass` variant with backdrop blur effect.
+    </Typography>,
+    <Typography key="pixel-perfection">
+      <Typography variant="strong">Pixel Perfection:</Typography> Upgraded to
+      `shadow-xs` and refined focus states for a cleaner look.
+    </Typography>,
+    <Typography key="accessibility">
+      <Typography variant="strong">Accessibility:</Typography> Clickable icons
+      are now automatically rendered using a `button` tag with proper focus
+      states.
+    </Typography>,
+  ]}
+/>

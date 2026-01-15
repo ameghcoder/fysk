@@ -1,0 +1,73 @@
+[
+    {
+        "heading": "components",
+        "for": "react-radix",
+        "path": "react/radix",
+        "items": [
+            {
+                "label": "avatar",
+                "href": "/docs/components/react/avatar"
+            },
+            {
+                "label": "badge",
+                "href": "/docs/components/react/badge"
+            },
+            {
+                "label": "button",
+                "href": "/docs/components/react/button"
+            },
+            {
+                "label": "empty",
+                "href": "/docs/components/react/empty"
+            },
+            {
+                "label": "form",
+                "href": "/docs/components/react/form"
+            },
+            {
+                "label": "input",
+                "href": "/docs/components/react/input"
+            },
+            {
+                "label": "input-otp",
+                "href": "/docs/components/react/input-otp"
+            },
+            {
+                "label": "kbd",
+                "href": "/docs/components/react/kbd"
+            },
+            {
+                "label": "pagination",
+                "href": "/docs/components/react/pagination"
+            },
+            {
+                "label": "progress",
+                "href": "/docs/components/react/progress"
+            },
+            {
+                "label": "select",
+                "href": "/docs/components/react/select"
+            },
+            {
+                "label": "switch",
+                "href": "/docs/components/react/switch"
+            },
+            {
+                "label": "tabs",
+                "href": "/docs/components/react/tabs"
+            },
+            {
+                "label": "textarea",
+                "href": "/docs/components/react/textarea"
+            },
+            {
+                "label": "tooltip",
+                "href": "/docs/components/react/tooltip"
+            },
+            {
+                "label": "typography",
+                "href": "/docs/components/react/typography"
+            }
+        ]
+    }
+]

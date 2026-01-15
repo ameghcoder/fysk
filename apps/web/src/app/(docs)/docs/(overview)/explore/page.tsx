@@ -1,5 +1,5 @@
 import React from 'react'
-import atomLinks from '@/db/atoms.json'
+import ComponentLinks from '@/db/components.json'
 import { Card, CardContent, Typography } from '@fysk/ui'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
@@ -9,12 +9,12 @@ import DocsMainContentWrapper from '@/components/section/docs-main-content-wrapp
 
 export const metadata: Metadata = {
     title: "Explore Components - Fysk",
-    description: "Browse all available Fysk atoms and components.",
+    description: "Browse all available Fysk components and UI blocks.",
 }
 
 const Explore = () => {
-    // Generate toc from atomLinks sections
-    const toc: OnThisPageHeadings[] = atomLinks.map((section) => ({
+    // Generate toc from ComponentLinks sections
+    const toc: OnThisPageHeadings[] = ComponentLinks.map((section) => ({
         level: 2,
         text: section.heading.charAt(0).toUpperCase() + section.heading.slice(1),
         id: section.heading.toLowerCase().replace(/\s+/g, '-'),
@@ -25,11 +25,11 @@ const Explore = () => {
             <div>
                 <Typography variant="h1" className="mb-4">Explore Components</Typography>
                 <Typography variant="lead">
-                    A comprehensive list of all available atoms and primitives in the Fysk library.
+                    A comprehensive list of all available UI components and interactive blocks in the Fysk library.
                 </Typography>
             </div>
 
-            {atomLinks.map((section, idx) => (
+            {ComponentLinks.map((section, idx) => (
                 <div key={idx} className="space-y-6" id={section.heading.toLowerCase().replace(/\s+/g, '-')}>
                     <Typography variant="h2" className="capitalize border-b border-border pb-2">{section.heading}</Typography>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -51,3 +51,4 @@ const Explore = () => {
 }
 
 export default Explore
+

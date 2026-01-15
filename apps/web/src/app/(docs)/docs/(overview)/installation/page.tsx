@@ -1,4 +1,4 @@
-import { Typography } from '@fysk/ui'
+import { Card, CardContent, CardHeader, CardTitle, Typography } from '@fysk/ui'
 import CodeBlock from '@/components/layout/code-block'
 import Link from 'next/link'
 import CustomBullet from '@/components/icons/custom-bullet'
@@ -36,7 +36,7 @@ const Installation = () => {
                     <Typography variant="h3" className="mt-0" id="create-a-project">Create a Project</Typography>
                 </div>
                 <Typography className="mb-4">
-                    Start by creating a new Next.js project using `create-next-app`.
+                    Start by creating a new Next.js project using <Typography variant="inlineCode">create-next-app</Typography>.
                 </Typography>
                 <CodeBlock
                     className='mb-2!'
@@ -51,21 +51,25 @@ const Installation = () => {
                     <Typography variant="h3" className="mt-0" id="run-the-cli-init">Run the CLI Init</Typography>
                 </div>
                 <Typography className="mb-4">
-                    Fysk is built on top of the shadcn/ui foundation. Run the `init` command to set up the base configuration, strict dependencies, and utility files.
+                    Fysk is built on top of the shadcn/ui foundation. Run the <Typography variant="inlineCode">init</Typography> command to set up the base configuration, strict dependencies, and utility files.
                 </Typography>
                 <CodeBlock
                     className='mb-2!'
                     language="bash"
                     code={`npx shadcn@latest init`}
                 />
-                <div className="mt-4 p-4 bg-muted/30 rounded-lg text-sm text-muted-foreground border border-border/50">
-                    <Typography variant="small" className="font-medium text-foreground">Configuration defaults:</Typography>
-                    <ul className="mt-2 space-y-1 list-disc list-inside">
-                        <li>Style: <strong>New York</strong></li>
-                        <li>Base Color: <strong>Zinc</strong></li>
-                        <li>CSS Variables: <strong>Yes</strong></li>
-                    </ul>
-                </div>
+                <Card variant={'glass'} className="mt-4">
+                    <CardHeader>
+                        <CardTitle> Configuration defaults: </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <Typography variant="list" data={[
+                            "Style: New York",
+                            "Base Color: Zinc",
+                            "CSS Variables: Yes",
+                        ]} />
+                    </CardContent>
+                </Card>
             </SectionContainerWrapper>
 
             <SectionContainerWrapper>
@@ -74,7 +78,7 @@ const Installation = () => {
                     <Typography variant="h3" className="mt-0" id="add-components">Add Components</Typography>
                 </div>
                 <Typography className="mb-4">
-                    You can now add components to your project. Browse the <Link href="/docs/atoms/react/home" className="text-primary hover:underline">Components</Link> section to find what you need.
+                    You can now add components to your project. Browse the <Link href="/docs/explore" className="text-primary hover:underline">Components</Link> section to find what you need.
                     <br /><br />
                     Currently, Fysk does not have a dedicated CLI. However, since we are compatible with the shadcn ecosystem, you can use the standard shadcn command pointing to our registry, or simply copy the code manually.
                 </Typography>
@@ -91,7 +95,7 @@ const Installation = () => {
 
                 <Typography variant="h4" className="mb-2 mt-6" id="option-b-manual-installation">Option B: Manual Installation</Typography>
                 <Typography className="mb-2 text-sm text-muted-foreground">
-                    Copy the code from the &quot;Code&quot; tab on the component page into your project (Preview section contains the original code for component).
+                    Copy the code from the <Typography variant="strong">&quot;Code&quot;</Typography> tab on the component page into your project (Preview section contains the original code for component).
                 </Typography>
             </SectionContainerWrapper>
         </DocsMainContentWrapper>
@@ -99,3 +103,5 @@ const Installation = () => {
 }
 
 export default Installation
+
+

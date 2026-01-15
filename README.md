@@ -2,19 +2,19 @@
 
 ![Fysk Banner](apps/web/public/assets/readme-banner.jpg)
 
-**Fysk** is a next-generation UI component library designed for the modern web. Unlike traditional libraries, Fysk components come with a "built-in brain" - they aren't just static pixels; they manage their own specific local states and interactions out of the box.
+**Fysk** is a next-generation UI component library designed for the modern web. Unlike traditional libraries, Fysk components come with **built-in state management** - they aren't just static pixels; they manage their own specific local states and interactions out of the box.
 
-Built on top of **Radix UI** and **Tailwind CSS**, Fysk prioritizes premium aesthetics and developer experience, distributed via a generic "copy-paste" architecture similar to shadcn/ui.
+Built on top of **Radix UI** and **Tailwind CSS**, Fysk prioritizes **polished, production-ready aesthetics** and developer experience, distributed via a generic "copy-paste" architecture similar to shadcn/ui.
 
 ---
 
 ## ✨ Features
 
-- **Built-in Brain**: Atoms handle their own micro-interactions (e.g., a button that have success, loading, error state and behave based on state automatically).
-- **Premium Aesthetics**: Polished, high-end visual design defaults that look great immediately.
+- **Built-in State Management**: Components handle their own micro-interactions (e.g., a button that has success, loading, and error states and behaves based on state automatically).
+- **Polished Aesthetics**: High-end visual design defaults that look great immediately and are production-ready.
 - **Copy-Paste Architecture**: You own the code. Copy components directly into your project and customize them without fighting a package abstraction.
-- **Universal Theming**: seamless support for Light/Dark modes, compatible with both Tailwind v3 and v4.
-- **Bleeding Edge**: Built for React 19 and Next.js 16.
+- **Universal Theming**: Seamless support for Light/Dark modes, compatible with both Tailwind v3 and v4.
+- **Stateful Primitives**: Focus on functionality with one-prop state handling.
 
 ## 🚀 Tech Stack
 
@@ -42,13 +42,13 @@ git clone https://github.com/ameghcoder/fysk.git
 cd fysk
 ```
 
-2. **Install dependencies:**
+1. **Install dependencies:**
 
 ```bash
 pnpm install
 ```
 
-3. **Run the development server:**
+1. **Run the development server:**
 
 ```bash
 pnpm dev

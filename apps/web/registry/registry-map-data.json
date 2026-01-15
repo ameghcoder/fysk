@@ -15,5 +15,6 @@
     "textarea": "textarea.json",
     "tooltip": "tooltip.json",
     "typography": "typography.json",
-    "fysk-provider": "fysk-provider.json"
+    "fysk-provider": "fysk-provider.json",
+    "fysk-hooks": "fysk-hooks.json"
 }

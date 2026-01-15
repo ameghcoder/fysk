@@ -1,0 +1,112 @@
+---
+title: "Tabs"
+description: "A set of layered sections of content—known as tab panels—that are displayed one at a time."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Tabs"
+  file="tabs"
+  basePath="/registry/components/tabs"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "glass", "underline", "pill"],
+      default: "default",
+    },
+    fullWidth: { type: "boolean", default: false },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+  }}
+>
+
+  <TabsDemo className="w-[400px]" />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/tabs.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui"
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">Content Acc</TabsContent>
+  <TabsContent value="password">Content Pass</TabsContent>
+</Tabs>`}
+/>
+
+## Examples
+
+### Default
+
+Standard clean tab grouping with background highlights.
+
+<ComponentPreview file="tabs-example-default-01">
+  <TabsDemo />
+</ComponentPreview>
+
+### Variants
+
+Showcase of multiple visual styles: `glass` (frosted), `underline` (minimal), and `pill` (button-like).
+
+<ComponentPreview file="tabs-example-variants-01">
+  <TabsVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="visual-variants">
+      <Typography variant="strong">Visual Variants:</Typography> Includes{" "}
+      <Typography variant="inlineCode">default</Typography>,{" "}
+      <Typography variant="inlineCode">glass</Typography> (frosted),{" "}
+      <Typography variant="inlineCode">underline</Typography>, and{" "}
+      <Typography variant="inlineCode">pill</Typography> styles.
+    </Typography>,
+    <Typography key="glassmorphism">
+      <Typography variant="strong">Glassmorphism:</Typography> Polished{" "}
+      <Typography variant="inlineCode">glass</Typography> variant with
+      backdrop-blur and specific transiton effects.
+    </Typography>,
+    <Typography key="layout-control">
+      <Typography variant="strong">Layout Control:</Typography> Support for{" "}
+      <Typography variant="inlineCode">fullWidth</Typography> lists to span the
+      entire container width.
+    </Typography>,
+    <Typography key="radix-based">
+      <Typography variant="strong">Radix Based:</Typography> Best-in-class
+      accessibility and keyboard navigation.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+### Tabs
+
+| Prop        | Type                                            | Default     | Description                                                          |
+| ----------- | ----------------------------------------------- | ----------- | -------------------------------------------------------------------- |
+| `variant`   | `"default" \| "glass" \| "underline" \| "pill"` | `"default"` | The visual style of the tab system.                                  |
+| `fullWidth` | `boolean`                                       | `false`     | Whether the tabs list should take up all available horizontal space. |
+| `state`     | `"idle" \| "loading" \| "success" \| "error"`   | `"idle"`    | The current interaction state.                                       |
+
+<Typography variant="blockquote">
+  Accepts all standard props from Radix UI Tabs.
+</Typography>

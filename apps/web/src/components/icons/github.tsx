@@ -7,3 +7,4 @@ const GithubIcon = ({ className }: { className?: string }) => {
 }
 
 export default GithubIcon
+

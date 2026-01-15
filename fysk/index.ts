@@ -1,11 +1,14 @@
 // fysk - React UI Component Library
 // Main entry point for the library
 
-// Atoms - Primitive UI components
-export * from "./atoms/react/radix";
+// Components - Primitive UI components
+export * from "./components/react/radix";
+
+// Hooks
+export * from "./components/react/hooks/useFyskAnimation";
 
 // Provider - Global configuration
-export * from "./atoms/react/provider/fysk-provider";
+export * from "./components/react/provider/fysk-provider";
 
 // Library scripts
 export * from "./lib/utils";

@@ -21,8 +21,9 @@
     "paths": {
       "@/*": ["./src/*"],
       "@registry/json": ["../../fysk/registry/registry.json"],
-      "@/components/fysk-provider": ["../../fysk/atoms/react/provider/fysk-provider.tsx"],
-      "@/components/fysk/*": ["../../fysk/atoms/react/radix/*"],
+      "@/components/hooks/useFyskAnimation": ["../../fysk/components/react/hooks/useFyskAnimation.ts"],
+      "@/components/fysk-provider": ["../../fysk/components/react/provider/fysk-provider.tsx"],
+      "@/components/fysk/*": ["../../fysk/components/react/radix/*"],
       "@fysk/ui": ["../../fysk/index.ts"]
     }
   },
@@ -33,6 +34,8 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "tailwind.config.js", "src/app/(docs)/docs/atoms/react/popover.mdx", "src/app/(docs)/docs/atoms/react/button-group.mdx"  ],
+, "tailwind.config.js", "src/app/(docs)/docs/components/react/popover.mdx", "src/app/(docs)/docs/components/react/button-group.mdx"  ],
   "exclude": ["node_modules"]
 }
+
+

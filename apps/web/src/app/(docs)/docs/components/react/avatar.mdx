@@ -1,0 +1,103 @@
+---
+title: "Avatar"
+description: "An image element with a fallback for representing the user, featuring built-in loading and error states."
+---
+
+import { Avatar, AvatarImage, AvatarFallback } from "@fysk/ui";
+
+## Preview
+
+<ComponentPreview
+  name="Avatar"
+  file="avatar"
+  basePath="/registry/components/avatar"
+  controls={{
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg", "xl"],
+      default: "xl",
+    },
+    variant: {
+      type: "select",
+      options: ["default", "outline", "ghost", "glass"],
+      default: "default",
+    },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "error"],
+      default: "idle",
+    },
+  }}
+>
+  <Avatar src="https://github.com/ameghcoder.png" alt="@ameghcoder" />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/avatar.json"
+/>
+
+## Usage
+
+<CodeBlock language="tsx" code={`import { Avatar } from "@/components/ui"
+
+<Avatar src="https://github.com/ameghcoder.png" fallback="AC" />`} />
+
+## Examples
+
+### Default
+
+Standard circular avatar with image and fallback.
+
+<ComponentPreview file="avatar-example-default-01">
+  <Avatar src="https://github.com/_wrong_image_.png" fallback="AC" />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="built-in-states">
+      <Typography variant="strong">Built-in States:</Typography> Integrated{" "}
+      <Typography variant="inlineCode">loading</Typography> (shows a
+      pulse/spinner) and <Typography variant="inlineCode">error</Typography>{" "}
+      (shows alert icon) feedback.
+    </Typography>,
+    <Typography key="auto-initials">
+      <Typography variant="strong">Auto-Initials:</Typography> Automatically
+      extracts initials from the{" "}
+      <Typography variant="inlineCode">alt</Typography> prop if no image is
+      found and no fallback is provided.
+    </Typography>,
+    <Typography key="glassmorphism">
+      <Typography variant="strong">Glassmorphism:</Typography> Fallbacks and
+      state overlays feature subtle blurs and modern backgrounds.
+    </Typography>,
+    <Typography key="responsive-sizing">
+      <Typography variant="strong">Responsive Sizing:</Typography> Four
+      pre-configured sizes from <Typography variant="inlineCode">sm</Typography>{" "}
+      to <Typography variant="inlineCode">xl</Typography>.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+The `Avatar` component accepts the following props:
+
+| Prop       | Type                                           | Default     | Description                                   |
+| ---------- | ---------------------------------------------- | ----------- | --------------------------------------------- |
+| `size`     | `"sm" \| "md" \| "lg" \| "xl"`                 | `"md"`      | The visual size of the avatar.                |
+| `variant`  | `"default" \| "outline" \| "ghost" \| "glass"` | `"default"` | Visual style of the border/container.         |
+| `state`    | `"idle" \| "loading" \| "error"`               | `"idle"`    | Current interaction or async state.           |
+| `src`      | `string`                                       | -           | Image source URL.                             |
+| `alt`      | `string`                                       | -           | Accessible name and source for auto-initials. |
+| `fallback` | `React.Node`                                   | -           | Custom content for the fallback state.        |
+
+<Typography variant="blockquote">
+  Accepts all standard props from{" "}
+  <Typography variant="inlineCode">@radix-ui/react-avatar</Typography>.
+</Typography>

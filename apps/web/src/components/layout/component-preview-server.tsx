@@ -5,6 +5,7 @@ import { ComponentPreviewClient, PropControl } from './component-preview-client'
 import { PATHS } from '@/config/paths';
 
 interface ComponentPreviewProps {
+    previewClassName?: string;
     children: React.ReactNode;
     code?: string;
     file?: string;
@@ -16,6 +17,7 @@ interface ComponentPreviewProps {
 }
 
 export default async function ComponentPreview({
+    previewClassName,
     children,
     code: initialCode = "",
     file,
@@ -76,6 +78,7 @@ export default async function ComponentPreview({
 
     return (
         <ComponentPreviewClient
+            previewClassName={previewClassName}
             code={finalCode}
             showPropOpener={showPropOpener}
             controls={controls}
@@ -86,3 +89,4 @@ export default async function ComponentPreview({
         </ComponentPreviewClient>
     )
 }
+

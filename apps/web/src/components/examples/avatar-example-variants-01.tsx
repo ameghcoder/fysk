@@ -25,3 +25,5 @@ export default function AvatarVariants() {
         </div>
     )
 }
+
+

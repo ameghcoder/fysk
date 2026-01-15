@@ -1,0 +1,19 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "typography",
+    "title": "Typography",
+    "type": "registry:ui",
+    "description": "Standard typography component.",
+    "dependencies": [
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils"
+    ],
+    "files": [
+        {
+            "path": "fysk/typography.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

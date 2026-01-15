@@ -63,6 +63,15 @@ export const exampleRegistry: Record<string, any> = {
         }),
     }
   ),
+  "button-example-default-01": dynamic(
+    () => import("./button-example-default-01"),
+    {
+      loading: () =>
+        React.createElement("div", {
+          className: "h-20 w-full animate-pulse bg-muted rounded-lg",
+        }),
+    }
+  ),
   "button-example-as-child-01": dynamic(
     () => import("./button-example-as-child-01"),
     {
@@ -117,6 +126,21 @@ export const exampleRegistry: Record<string, any> = {
         }),
     }
   ),
+  "empty-example-glass-01": dynamic(() => import("./empty-example-glass-01"), {
+    loading: () =>
+      React.createElement("div", {
+        className: "h-20 w-full animate-pulse bg-muted rounded-lg",
+      }),
+  }),
+  "empty-example-minimal-01": dynamic(
+    () => import("./empty-example-minimal-01"),
+    {
+      loading: () =>
+        React.createElement("div", {
+          className: "h-20 w-full animate-pulse bg-muted rounded-lg",
+        }),
+    }
+  ),
   "empty-example-variants-01": dynamic(
     () => import("./empty-example-variants-01"),
     {
@@ -150,6 +174,15 @@ export const exampleRegistry: Record<string, any> = {
         className: "h-20 w-full animate-pulse bg-muted rounded-lg",
       }),
   }),
+  "input-example-interactive-01": dynamic(
+    () => import("./input-example-interactive-01"),
+    {
+      loading: () =>
+        React.createElement("div", {
+          className: "h-20 w-full animate-pulse bg-muted rounded-lg",
+        }),
+    }
+  ),
   "input-example-states-01": dynamic(
     () => import("./input-example-states-01"),
     {
@@ -210,8 +243,8 @@ export const exampleRegistry: Record<string, any> = {
         }),
     }
   ),
-  "pagination-example-smart-01": dynamic(
-    () => import("./pagination-example-smart-01"),
+  "pagination-example-stateful-01": dynamic(
+    () => import("./pagination-example-stateful-01"),
     {
       loading: () =>
         React.createElement("div", {
@@ -329,6 +362,15 @@ export const exampleRegistry: Record<string, any> = {
   ),
   "textarea-example-default-01": dynamic(
     () => import("./textarea-example-default-01"),
+    {
+      loading: () =>
+        React.createElement("div", {
+          className: "h-20 w-full animate-pulse bg-muted rounded-lg",
+        }),
+    }
+  ),
+  "textarea-example-stateful-01": dynamic(
+    () => import("./textarea-example-stateful-01"),
     {
       loading: () =>
         React.createElement("div", {

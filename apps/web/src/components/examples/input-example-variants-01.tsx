@@ -8,6 +8,9 @@ export default function InputVariants() {
             <Input variant="double" placeholder="Double variant" />
             <Input variant="ghost" placeholder="Ghost variant" />
             <Input variant="deep" placeholder="Deep variant" />
+            <Input variant="glass" placeholder="Glass variant" />
         </div>
     )
 }
+
+

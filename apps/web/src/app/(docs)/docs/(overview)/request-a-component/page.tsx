@@ -2,7 +2,7 @@ import SectionContainerWrapper from '@/components/section/section-wrapper'
 import { Card, CardContent, CardHeader, CardTitle, Typography } from '@fysk/ui'
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { Twitter, Linkedin, Github, Atom, Layers, LayoutTemplate } from 'lucide-react'
+import { Twitter, Linkedin, Github, Atom, Layers } from 'lucide-react'
 import { OnThisPageHeadings } from '@/lib/mdx'
 import DocsMainContentWrapper from '@/components/section/docs-main-content-wrapper'
 
@@ -57,22 +57,21 @@ const RequestAComponent = () => {
                     Fysk is a community-driven project, and your ideas matter. To request a new component, you can post on <strong>Twitter (X)</strong> or <strong>LinkedIn</strong> and tag me, or open an issue directly on <strong>GitHub</strong>. This keeps everything transparent and allows others to interact and provide feedback or similar needs.
                 </Typography>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex flex-col w-full gap-4">
                     {
                         requestMethods.map((data) => (
-                            <Link key={data.href} href={data.href} target="_blank" rel="noopener noreferrer" className="group no-underline">
-                                <Card variant={'secondary'} className="hover:bg-muted/50 transition-all hover:border-primary/50 border-border/60 h-full">
+                            <Link key={data.href} href={data.href} target="_blank" rel="noopener noreferrer" className="group no-underline w-full">
+                                <Card variant={'ghost'} className="hover:bg-muted/50 transition-all hover:border-primary/50 border-border/60 h-full">
                                     <CardContent className="p-5 flex flex-col items-start gap-4">
                                         <div className='flex items-center gap-4'>
                                             <div className="p-3 rounded-lg bg-[#1DA1F2]/10 text-primary group-hover:bg-[#1DA1F2]/20 transition-colors">
                                                 <data.icon className="h-6 w-6" />
                                             </div>
-                                            <div>
-                                                <Typography className="font-semibold m-0">{data.title}</Typography>
-                                                <Typography variant="small" className="text-muted-foreground">{data.handle}</Typography>
+                                            <div className='flex flex-col gap-2'>
+                                                <Typography className="font-semibold">{data.title} ({data.handle})</Typography>
+                                                <Typography variant="small" className="text-muted-foreground">{data.description}</Typography>
                                             </div>
                                         </div>
-                                        <Typography variant="small" className="text-muted-foreground">{data.description}</Typography>
                                     </CardContent>
                                 </Card>
                             </Link>
@@ -84,17 +83,17 @@ const RequestAComponent = () => {
             <SectionContainerWrapper>
                 <Typography variant="h2" className="mb-4" id="component-types">Component Types</Typography>
                 <Typography className="mb-6">
-                    When making a request, it helps to know what type of component you&apos;re looking for. Fysk organizes its library into three tiers:
+                    When making a request, it helps to know what type of component you&apos;re looking for. Fysk organizes its library into two tiers:
                 </Typography>
 
                 <div className="grid grid-cols-1 gap-4">
-                    <Card variant="secondary">
+                    <Card variant="glass">
                         <CardHeader className="pb-2">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                     <Atom className="h-5 w-5" />
                                 </div>
-                                <CardTitle>Atom</CardTitle>
+                                <CardTitle>Component</CardTitle>
                             </div>
                         </CardHeader>
                         <CardContent>
@@ -104,34 +103,18 @@ const RequestAComponent = () => {
                         </CardContent>
                     </Card>
 
-                    <Card variant="secondary">
+                    <Card variant="glass">
                         <CardHeader className="pb-2">
                             <div className="flex items-center gap-3">
                                 <div className="p-2 rounded-lg bg-primary/10 text-primary">
                                     <Layers className="h-5 w-5" />
                                 </div>
-                                <CardTitle>Molecule</CardTitle>
+                                <CardTitle>Block</CardTitle>
                             </div>
                         </CardHeader>
                         <CardContent>
                             <Typography variant="p" className="text-muted-foreground">
-                                Larger, more complex components made by combining multiple atoms. Examples include hero sections, file upload zones, pricing cards, authentication forms, or navigation headers.
-                            </Typography>
-                        </CardContent>
-                    </Card>
-
-                    <Card variant="secondary">
-                        <CardHeader className="pb-2">
-                            <div className="flex items-center gap-3">
-                                <div className="p-2 rounded-lg bg-primary/10 text-primary">
-                                    <LayoutTemplate className="h-5 w-5" />
-                                </div>
-                                <CardTitle>Material</CardTitle>
-                            </div>
-                        </CardHeader>
-                        <CardContent>
-                            <Typography variant="p" className="text-muted-foreground">
-                                Full page layouts and templates built using atoms and molecules. These are ready-to-use starting points for dashboards, landing pages, settings screens, and more.
+                                Larger, more complex components made by combining multiple base components. Examples include hero sections, file upload zones, pricing cards, authentication forms, or navigation headers.
                             </Typography>
                         </CardContent>
                     </Card>
@@ -145,7 +128,7 @@ const RequestAComponent = () => {
                 </Typography>
                 <ul className="list-disc list-inside space-y-2 text-muted-foreground">
                     <li><strong className="text-foreground">Component Name:</strong> What would you call it?</li>
-                    <li><strong className="text-foreground">Type:</strong> Is it an Atom, Molecule, or Material?</li>
+                    <li><strong className="text-foreground">Type:</strong> Is it a Component or a Block?</li>
                     <li><strong className="text-foreground">Use Case:</strong> Where would you use this component? What problem does it solve?</li>
                     <li><strong className="text-foreground">Inspiration (optional):</strong> Any reference links, screenshots, or examples from other libraries?</li>
                     <li><strong className="text-foreground">Special Features:</strong> Any specific states, animations, or accessibility considerations?</li>
@@ -162,3 +145,5 @@ const RequestAComponent = () => {
 }
 
 export default RequestAComponent
+
+

@@ -1,0 +1,129 @@
+---
+title: "Badge"
+description: "Displays a small amount of information or a status indicator within a compact shape."
+---
+
+import { Badge } from "@fysk/ui";
+import { Star } from "lucide-react";
+
+## Preview
+
+<ComponentPreview
+  name="Badge"
+  file="badge"
+  basePath="/registry/components/badge"
+  controls={{
+    variant: {
+      type: "select",
+      options: [
+        "primary",
+        "secondary",
+        "outline",
+        "ghost",
+        "glass",
+        "success",
+        "error",
+        "warning",
+        "info",
+      ],
+      default: "primary",
+    },
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+      default: "md",
+    },
+    badgeStyle: {
+      type: "select",
+      options: ["native", "modern"],
+      default: "native",
+    },
+    dot: {
+      type: "boolean",
+      default: false,
+    },
+    dotBlink: {
+      type: "boolean",
+      default: true,
+    },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+  }}
+>
+  <Badge>Badge Content</Badge>
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/badge.json"
+/>
+
+## Usage
+
+<CodeBlock language="tsx" code={`import { Badge } from "@/components/ui"
+
+<Badge variant="outline">Badge Content</Badge>`} />
+
+## Examples
+
+### Default
+
+Showcasing the various variants and styles available.
+
+<ComponentPreview file="badge-example-default-01">
+  <BadgeDemo />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="modern-styling">
+      <Typography variant="strong">Modern Styling:</Typography> Includes a{" "}
+      <Typography variant="inlineCode">modern</Typography> style variant that
+      uses semi-transparent backgrounds for a softer look.
+    </Typography>,
+    <Typography key="status-indicators">
+      <Typography variant="strong">Status Indicators:</Typography> Built-in{" "}
+      <Typography variant="inlineCode">dot</Typography> support with optional{" "}
+      <Typography variant="inlineCode">dotBlink</Typography> animation for live
+      statuses.
+    </Typography>,
+    <Typography key="state-aware">
+      <Typography variant="strong">State Aware:</Typography> Supports{" "}
+      <Typography variant="inlineCode">loading</Typography>,{" "}
+      <Typography variant="inlineCode">success</Typography>, and{" "}
+      <Typography variant="inlineCode">error</Typography> states with automatic
+      icon switching.
+    </Typography>,
+    <Typography key="icon-support">
+      <Typography variant="strong">Icon Support:</Typography> Easily add icons
+      to the start or end of the badge.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+The `Badge` component accepts the following props:
+
+| Prop           | Type                   | Default     | Description                                               |
+| -------------- | ---------------------- | ----------- | --------------------------------------------------------- |
+| `variant`      | `string`               | `"primary"` | The color theme of the badge.                             |
+| `size`         | `"sm" \| "md" \| "lg"` | `"md"`      | The visual size.                                          |
+| `badgeStyle`   | `"native" \| "modern"` | `"native"`  | Controls the opacity and border style.                    |
+| `dot`          | `boolean`              | `false`     | Shows a small dot indicator (only if no icon is present). |
+| `dotBlink`     | `boolean`              | `true`      | Enables a heartbeat animation on the dot.                 |
+| `state`        | `string`               | `"idle"`    | Async state to show corresponding icons.                  |
+| `icon`         | `React.Node`           | -           | Icon to display.                                          |
+| `iconPosition` | `"start" \| "end"`     | `"start"`   | Position of the icon relative to text.                    |
+
+<Typography variant="blockquote">
+  Supports all standard HTML `div` attributes.
+</Typography>

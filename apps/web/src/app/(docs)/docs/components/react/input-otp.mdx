@@ -1,0 +1,112 @@
+---
+title: "Input OTP"
+description: "A specialized input component for capturing one-time passwords and verification codes."
+---
+
+## Preview
+
+<ComponentPreview
+  name="OTPInput"
+  file="input-otp"
+  basePath="/registry/components/input-otp"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "condensed", "underline"],
+      default: "default",
+    },
+    length: { type: "number", default: 4 },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+    inputType: {
+      type: "select",
+      options: ["numeric", "alphanumeric", "alpha"],
+      default: "numeric",
+    },
+  }}
+>
+  <OTPInputDemo length={6} />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/input-otp.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { OTPInput } from "@/components/ui"
+
+<OTPInput length={6} onChange={(v) => console.log(v)} />`}
+/>
+
+## Examples
+
+### Default
+
+Individual boxed inputs for each character.
+
+<ComponentPreview file="input-otp-example-default-01">
+  <OTPInput length={4} />
+</ComponentPreview>
+
+### Variants
+
+Includes `condensed` (grouped group) and `underline` styles.
+
+<ComponentPreview file="input-otp-example-variants-01">
+  <InputOTPVariants />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="auto-focus">
+      <Typography variant="strong">Automatic Focus:</Typography> Seamlessly
+      moves to the next field as the user types and moves back on backspace.
+    </Typography>,
+    <Typography key="paste-support">
+      <Typography variant="strong">Paste Support:</Typography> Handles pasting
+      whole verification codes, splitting them across the appropriate fields.
+    </Typography>,
+    <Typography key="validation">
+      <Typography variant="strong">Validation:</Typography> Support for{" "}
+      <Typography variant="inlineCode">numeric</Typography>,{" "}
+      <Typography variant="inlineCode">alpha</Typography>, and{" "}
+      <Typography variant="inlineCode">alphanumeric</Typography> restriction
+      modes.
+    </Typography>,
+    <Typography key="visual-feedback">
+      <Typography variant="strong">Visual Feedback:</Typography> Built-in state
+      handling for <Typography variant="inlineCode">error</Typography>,{" "}
+      <Typography variant="inlineCode">success</Typography>, and{" "}
+      <Typography variant="inlineCode">loading</Typography> (pulse) feedback.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop        | Type                                          | Default     | Description                              |
+| ----------- | --------------------------------------------- | ----------- | ---------------------------------------- |
+| `length`    | `number`                                      | `6`         | Number of OTP digits/characters.         |
+| `variant`   | `"default" \| "condensed" \| "underline"`     | `"default"` | Visual style of the input boxes.         |
+| `state`     | `"idle" \| "loading" \| "success" \| "error"` | `"idle"`    | Current validation or submission state.  |
+| `inputType` | `"numeric" \| "alphanumeric" \| "alpha"`      | `"numeric"` | Type of characters allowed.              |
+| `onChange`  | `function`                                    | -           | Callback returning the full code string. |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML input attributes.
+</Typography>
+
+
+

@@ -17,6 +17,8 @@
     },
     "exports": {
         ".": "./index.ts",
-        "./scripts/generate-atoms.mjs": "./scripts/generate-atoms.mjs"
+        "./scripts/generate-Components.mjs": "./scripts/generate-Components.mjs"
     }
 }
+
+

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "input-otp",
+    "title": "Input OTP",
+    "type": "registry:ui",
+    "description": "Accessible one-time password component with copy paste functionality.",
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/input-otp.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

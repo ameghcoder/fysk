@@ -33,3 +33,4 @@ export {
     LogoIconSVG,
     LogoIconPNG
 }
+

@@ -1,0 +1,123 @@
+---
+title: "Kbd"
+description: "A Polished keyboard key component with platform detection, specialized variants, and click-to-copy support."
+---
+
+import { Kbd, KbdGroup } from "@fysk/ui";
+
+## Preview
+
+<ComponentPreview
+  name="Kbd"
+  file="kbd"
+  basePath="/registry/components/kbd"
+controls={{
+    variant: {
+      type: "select",
+      options: ["default", "outline", "solid", "ghost", "glass", "mac", "modern"],
+      default: "default",
+    },
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+      default: "md",
+    },
+    copyable: { type: "boolean", default: false },
+  }}
+
+>
+
+ <Kbd keys={["mod", "shift", "p"]} />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/kbd.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Kbd, KbdGroup } from "@/components/ui"\n
+<Kbd keys={["mod", "shift", "p"]} />\n
+<KbdGroup>
+    <Kbd keys={["mod"]} />
+    <Kbd keys={["shift"]} />
+    <Kbd keys={["p"]} />
+</KbdGroup>`}
+/>
+
+## Examples
+
+### Variants
+
+Multiple visual styles including high-fidelity Mac-style and Modern gradients.
+
+<ComponentPreview file="kbd-example-variants-01">
+  <KbdVariants />
+</ComponentPreview>
+
+### Grouping Shortcuts
+
+Use `KbdGroup` to display key combinations with automatic separators.
+
+<ComponentPreview file="kbd-example-default-01">
+  <KbdDemo />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="platform-detection">
+      <Typography variant="strong">Platform Detection:</Typography>{" "}
+      Automatically converts keys like{" "}
+      <Typography variant="inlineCode">mod</Typography> to{" "}
+      <Typography variant="inlineCode">⌘</Typography> on Mac and{" "}
+      <Typography variant="inlineCode">Ctrl</Typography> on Windows/Linux.
+    </Typography>,
+    <Typography key="copy-support">
+      <Typography variant="strong">Copy to Clipboard:</Typography> Built-in
+      support for copying the shortcut text with a visual feedback ring.
+    </Typography>,
+    <Typography key="rich-aesthetics">
+      <Typography variant="strong">Rich Aesthetics:</Typography> Polished
+      variants including <Typography variant="inlineCode">glass</Typography>{" "}
+      (backdrop blur) and <Typography variant="inlineCode">mac</Typography>{" "}
+      (detailed gradients).
+    </Typography>,
+    <Typography key="group-component">
+      <Typography variant="strong">Group Component:</Typography> Handles spacing
+      and consistent scaling for key combinations.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+### Kbd
+
+| Prop       | Type                                      | Default     | Description                                            |
+| ---------- | ----------------------------------------- | ----------- | ------------------------------------------------------ |
+| `keys`     | `string[]`                                | -           | Array of keys to display (e.g. `['mod', 'P']`).        |
+| `variant`  | `string`                                  | `"default"` | The visual style of the key.                           |
+| `size`     | `"sm" \| "md" \| "lg"`                    | `"md"`      | The size of the key.                                   |
+| `platform` | `"mac" \| "windows" \| "linux" \| "auto"` | `"auto"`    | Overrides the detected platform for symbol formatting. |
+| `copyable` | `boolean`                                 | `false`     | Whether the kbd can be clicked to copy its value.      |
+
+### KbdGroup
+
+| Prop        | Type              | Default | Description                            |
+| ----------- | ----------------- | ------- | -------------------------------------- |
+| `separator` | `React.ReactNode` | `"+"`   | Element to place between grouped keys. |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML attributes.
+</Typography>
+
+
+

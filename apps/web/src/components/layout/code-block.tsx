@@ -56,9 +56,9 @@ const CodeBlock = ({ code, language = "TypeScript / React", variant = "default",
             {variant === "default" && (
                 <div className="flex items-center justify-between px-5 py-3 border-b border-border bg-muted/30 backdrop-blur-md shrink-0">
                     <div className="flex gap-2">
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#FF5F57] shadow-inner" />
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#FEBC2E] shadow-inner" />
-                        <div className="w-3.5 h-3.5 rounded-full bg-[#28C840] shadow-inner" />
+                        <div className="w-3 h-3 rounded-full bg-[#FF5F57] shadow-inner" />
+                        <div className="w-3 h-3 rounded-full bg-[#FEBC2E] shadow-inner" />
+                        <div className="w-3 h-3 rounded-full bg-[#28C840] shadow-inner" />
                     </div>
 
                     <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 text-[11px] font-medium text-muted-foreground uppercase tracking-widest pointer-events-none">
@@ -120,10 +120,10 @@ const CodeBlock = ({ code, language = "TypeScript / React", variant = "default",
 
 
                 {
-                    showExpander && <div className="w-full absolute bottom-0 left-0 h-10 flex items-center justify-center backdrop-blur-sm bg-linear-to-b from-transparent/50 to-background">
+                    showExpander && <div className={`w-full absolute bottom-0 left-0 h-10 flex items-center justify-center  ${!isExpanded && "backdrop-blur-sm bg-linear-to-b from-transparent/50 to-background"}`}>
                         <Button
                             variant="ghost"
-                            className="w-full! flex items-center justify-end text-foreground transition-all hover:bg-background/80 hover:backdrop-blur-sm"
+                            className={"w-full! flex items-center justify-end text-foreground transition-all hover:bg-background/80 hover:backdrop-blur-sm"}
                             onClick={() => setIsExpanded(!isExpanded)}
                         >
                             {isExpanded ? "Hide Code" : "Show Code"}
@@ -137,3 +137,5 @@ const CodeBlock = ({ code, language = "TypeScript / React", variant = "default",
 }
 
 export default CodeBlock
+
+

@@ -16,17 +16,18 @@ for (const file of envFiles) {
     }
 }
 
-const APP_URL = process.env.APP_URL || "http://localhost:3000"
-const RADIX_PATH = path.join(ROOT, "fysk/atoms/react/radix")
+const NEXT_PUBLIC_APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"
+const RADIX_PATH = path.join(ROOT, "fysk/components/react/radix")
 const REGISTRY_DIR = path.join(ROOT, "apps/web/registry")
 
 const COMPONENTS_DIR = path.join(REGISTRY_DIR, "components")
 const MAP_FILE = path.join(REGISTRY_DIR, "registry-map-data.json")
 const MAIN_REGISTRY_FILE = path.join(REGISTRY_DIR, "registry.json")
-const DOCS_ATOMS_DIR = path.join(ROOT, "apps/web/src/db/atoms.json")
+const DOCS_COMPONENTS_DIR = path.join(ROOT, "apps/web/src/db/components.json")
 
-// Providers Path
+// Providers & Hooks Path
 const FYSK_PROVIDER_PATH = path.join(RADIX_PATH, "../provider/fysk-provider.tsx")
+const FYSK_HOOKS_PATH = path.join(RADIX_PATH, "../hooks/useFyskAnimation.ts")
 
 const FYSK_PROVIDER_REGISTRY_ITEM = {
     "$schema": "https://ui.shadcn.com/schema/registry-item.json",
@@ -34,12 +35,31 @@ const FYSK_PROVIDER_REGISTRY_ITEM = {
     "type": "registry:component",
     "description": "Global provider for Fysk components.",
     "dependencies": [
-        "lucide-react"
+        "lucide-react",
+    ],
+    "registryDependencies": [
+        `${NEXT_PUBLIC_APP_URL}/r/fysk-hooks.json`
     ],
     "files": [
         {
             "path": "fysk/fysk-provider.tsx",
             "type": "registry:component"
+        }
+    ]
+}
+
+const FYSK_HOOKS_REGISTRY_ITEM = {
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "fysk-hooks",
+    "type": "registry:hook",
+    "description": "Global hooks for Fysk components.",
+    "registryDependencies": [
+        `${NEXT_PUBLIC_APP_URL}/r/fysk-provider.json`
+    ],
+    "files": [
+        {
+            "path": "fysk/useFyskAnimation.ts",
+            "type": "registry:hook"
         }
     ]
 }
@@ -61,7 +81,7 @@ async function buildRegistry() {
 
     const items = []
     const pathMap = {}
-    const docsAtoms = []
+    const docsComponents = []
 
     if (!fs.existsSync(RADIX_PATH)) {
         console.error(`❌ Radix path not found: ${RADIX_PATH}`)
@@ -82,7 +102,7 @@ async function buildRegistry() {
             const rawJson = cleanJson(raw)
 
             // before converting string to Json replace local url to exact url
-            const metaJson = rawJson.replaceAll("http://localhost:3000/r/", `${APP_URL}/r/`)
+            const metaJson = rawJson.replaceAll("http://localhost:3000/r/", `${NEXT_PUBLIC_APP_URL}/r/`)
 
             const meta = JSON.parse(metaJson)
 
@@ -125,9 +145,9 @@ async function buildRegistry() {
                     type: f.type
                 }))
             })
-            docsAtoms.push({
+            docsComponents.push({
                 label: meta.name,
-                href: `/docs/atoms/react/${meta.name}`
+                href: `/docs/components/react/${meta.name}`
             })
         } catch (err) {
             console.error(`❌ Error processing ${folder.name}:`, err.message)
@@ -149,10 +169,24 @@ async function buildRegistry() {
         console.log("- fysk-provider not found at ", FYSK_PROVIDER_PATH)
     }
 
+    if (fs.existsSync(FYSK_HOOKS_PATH)) {
+        console.log("- Processing fysk-hooks")
+        const hooksData = fs.readFileSync(FYSK_HOOKS_PATH, "utf8");
+        FYSK_HOOKS_REGISTRY_ITEM.files[0].content = hooksData;
+
+        fs.writeFileSync(path.join(COMPONENTS_DIR, "fysk-hooks.json"), JSON.stringify(FYSK_HOOKS_REGISTRY_ITEM, null, 4))
+
+        console.log("- Adding fysk-hooks to registry")
+        items.push(FYSK_HOOKS_REGISTRY_ITEM);
+        pathMap["fysk-hooks"] = "fysk-hooks.json"
+    } else {
+        console.log("- fysk-hooks not found at ", FYSK_HOOKS_PATH)
+    }
+
     const mainRegistry = {
         $schema: "https://ui.shadcn.com/schema/registry.json",
         name: "fysk",
-        homepage: APP_URL,
+        homepage: NEXT_PUBLIC_APP_URL,
         items: items
     }
     fs.writeFileSync(MAIN_REGISTRY_FILE, JSON.stringify(mainRegistry, null, 4))
@@ -161,15 +195,15 @@ async function buildRegistry() {
     fs.writeFileSync(MAP_FILE, JSON.stringify(pathMap, null, 4))
 
     console.log("- Updating Docs Director for Components...")
-    const finalDocsAtoms = [
+    const finalDocsComponents = [
         {
-            heading: "atoms",
+            heading: "components",
             for: "react-radix",
             path: "react/radix",
-            items: docsAtoms
+            items: docsComponents
         }
     ]
-    fs.writeFileSync(DOCS_ATOMS_DIR, JSON.stringify(finalDocsAtoms, null, 4))
+    fs.writeFileSync(DOCS_COMPONENTS_DIR, JSON.stringify(finalDocsComponents, null, 4))
 
     console.log(`✅ Registry build complete!`)
     console.log(`- Total components: ${items.length}`)

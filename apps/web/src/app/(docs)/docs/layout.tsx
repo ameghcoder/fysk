@@ -2,7 +2,7 @@
 import { Separator, Sidebar, SidebarContent, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarInset, SidebarItem, SidebarProvider, Typography } from '@fysk/ui'
 import Link from 'next/link'
 import React from 'react'
-import atomLinks from '@/db/atoms.json'
+import componentLinks from '@/db/components.json'
 import BgGradient from '@/components/effects/bg-gradient'
 import { Header } from '@/components/layout/header'
 import { headerNavLinks, LinkGroups } from '@/config/nav'
@@ -10,27 +10,40 @@ import { useUIStore } from '@/hooks/useUIStore'
 
 const overviewLinks: LinkGroups[] = [
     {
-        heading: "overview",
+        heading: "Getting Started",
         items: [
             {
-                label: "Getting Started",
+                label: "Introduction",
                 href: "/docs/"
+            },
+            {
+                label: "Quick Start",
+                href: "/docs/quick-start"
+            },
+            {
+                label: "Why Fysk?",
+                href: "/docs/why-use-fysk"
             },
             {
                 label: "Installation",
                 href: "/docs/installation"
             },
             {
-                label: "Why Use Fysk",
-                href: "/docs/why-use-fysk"
-            },
-            {
-                label: "Explore",
+                label: "Explore Components",
                 href: "/docs/explore"
-            },
+            }
+        ]
+    },
+    {
+        heading: "Guides",
+        items: [
             {
                 label: "Fysk Provider",
-                href: "/docs/provider/fysk-provider"
+                href: "/docs/fysk-provider"
+            },
+            {
+                label: "Fysk Hook",
+                href: "/docs/fysk-hook"
             },
             {
                 label: "+ Request a Component",
@@ -41,21 +54,24 @@ const overviewLinks: LinkGroups[] = [
 ]
 
 
+
 const DocsLayout = ({ children }: { children: React.ReactNode }) => {
     const { isSidebarOpened, setIsSidebarOpened } = useUIStore();
     return (
-        <div className='bg-secondary/50'>
+        <div className='relative overflow-hidden'>
+            <BgGradient direction='to left' opacity={1} colors={['#000000', '#000000']} darkThemeColors={['#ffffff', '#ff9a9e']} />
             <Header />
+
             <div className="relative px-1 lg:px-5">
                 <SidebarProvider open={isSidebarOpened} onOpenChange={setIsSidebarOpened} styleMode="fixed" className='bg-transparent' collapsible="none">
-                    <Sidebar className='md:bg-transparent border-transparent h-[calc(100svh-3.5rem)] top-14 pb-4'>
+                    <Sidebar className='md:bg-transparent border-transparent h-[calc(100vh-3.5rem)] top-14 pb-4'>
                         <SidebarContent>
                             {
                                 <SidebarGroup className='block md:hidden' key={headerNavLinks.heading}>
                                     <SidebarGroupLabel>{headerNavLinks.heading}</SidebarGroupLabel>
                                     <SidebarGroupContent>
                                         {
-                                            headerNavLinks.items.map((item, index) => {
+                                            headerNavLinks.items.map((item: { label: string; href: string }, index: number) => {
                                                 return <SidebarItem key={item.label + index} label={item.label} asChild>
                                                     <Link href={item.href} className='text-foreground! text-base! font-normal capitalize'>
                                                         {item.label}
@@ -68,12 +84,12 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
                                 </SidebarGroup>
                             }
                             {
-                                [...overviewLinks, ...atomLinks].map((link, index) => (
+                                [...overviewLinks, ...componentLinks].map((link: LinkGroups, index: number) => (
                                     <SidebarGroup key={link.heading + index}>
                                         <SidebarGroupLabel>{link.heading}</SidebarGroupLabel>
                                         <SidebarGroupContent>
                                             {
-                                                link.items.map((item, index) => (
+                                                link.items.map((item: { label: string; href: string }, index: number) => (
                                                     <SidebarItem key={index} label={item.label} asChild>
                                                         <Link href={item.href} className='text-foreground! text-base! font-normal capitalize'>
                                                             {item.label}
@@ -103,3 +119,4 @@ const DocsLayout = ({ children }: { children: React.ReactNode }) => {
 }
 
 export default DocsLayout
+

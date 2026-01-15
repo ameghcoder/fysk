@@ -1,0 +1,148 @@
+---
+title: "Card"
+description: "A versatile container component for grouping related content with support for multiple variants and state management."
+---
+
+<Prerequisites />
+
+## Preview
+
+<ComponentPreview
+  name="Card"
+  file="card"
+  basePath="/registry/components/card"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "outline", "ghost", "glass"],
+      default: "default",
+    },
+    state: {
+      type: "select",
+      options: ["idle", "loading", "success", "error"],
+      default: "idle",
+    },
+  }}
+>
+  <Card className="w-[350px]">
+    <CardHeader>
+      <CardTitle>Card Title</CardTitle>
+      <CardDescription>Card Description goes here.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Typography>
+        This is the card content area. You can add any content here.
+      </Typography>
+    </CardContent>
+    <CardFooter>
+      <Button>Action</Button>
+    </CardFooter>
+  </Card>
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/card.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui"
+
+<Card>
+  <CardHeader>
+    <CardTitle>Card Title</CardTitle>
+    <CardDescription>Card description.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Card content goes here.</p>
+  </CardContent>
+  <CardFooter>
+    <Button>Save</Button>
+  </CardFooter>
+</Card>`}
+/>
+
+## Examples
+
+### Glass Variant
+
+The glass variant features a frosted background effect, perfect for layered UIs.
+
+<ComponentPreview file="card-example-glass-01">
+  <Card variant="glass" className="w-[350px]">
+    <CardHeader>
+      <CardTitle>Glass Card</CardTitle>
+      <CardDescription>A beautiful frosted card.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Typography>Content with backdrop blur effect.</Typography>
+    </CardContent>
+  </Card>
+</ComponentPreview>
+
+### State Management
+
+Cards support loading, success, and error states with automatic visual feedback.
+
+<ComponentPreview file="card-example-states-01">
+  <Card state="loading" className="w-[350px]">
+    <CardHeader>
+      <CardTitle>Loading Card</CardTitle>
+      <CardDescription>This card is in a loading state.</CardDescription>
+    </CardHeader>
+    <CardContent>
+      <Typography>Content is being fetched...</Typography>
+    </CardContent>
+  </Card>
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="variants">
+      <Typography variant="strong">Variants:</Typography> Includes{" "}
+      <Typography variant="inlineCode">default</Typography>,{" "}
+      <Typography variant="inlineCode">outline</Typography>,{" "}
+      <Typography variant="inlineCode">ghost</Typography>, and{" "}
+      <Typography variant="inlineCode">glass</Typography> styles.
+    </Typography>,
+    <Typography key="state-management">
+      <Typography variant="strong">State Management:</Typography> Built-in
+      support for <Typography variant="inlineCode">loading</Typography>,{" "}
+      <Typography variant="inlineCode">success</Typography>, and{" "}
+      <Typography variant="inlineCode">error</Typography> states with visual
+      feedback.
+    </Typography>,
+    <Typography key="composable">
+      <Typography variant="strong">Composable:</Typography> Includes
+      sub-components <Typography variant="inlineCode">CardHeader</Typography>,{" "}
+      <Typography variant="inlineCode">CardTitle</Typography>,{" "}
+      <Typography variant="inlineCode">CardDescription</Typography>,{" "}
+      <Typography variant="inlineCode">CardContent</Typography>, and{" "}
+      <Typography variant="inlineCode">CardFooter</Typography>.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+### Card
+
+| Prop          | Type                                           | Default     | Description                                    |
+| ------------- | ---------------------------------------------- | ----------- | ---------------------------------------------- |
+| `variant`     | `"default" \| "outline" \| "ghost" \| "glass"` | `"default"` | The visual style of the card.                  |
+| `state`       | `"idle" \| "loading" \| "success" \| "error"`  | `"idle"`    | Controls the state overlay and border styling. |
+| `LoaderIcon`  | `React.Node`                                   | -           | Custom loading icon override.                  |
+| `SuccessIcon` | `React.Node`                                   | -           | Custom success icon override.                  |
+| `ErrorIcon`   | `React.Node`                                   | -           | Custom error icon override.                    |
+
+<Typography variant="blockquote">
+  Accepts all standard HTML `div` attributes.
+</Typography>

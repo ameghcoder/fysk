@@ -82,3 +82,4 @@ const BgGradient: React.FC<BgGradientProps> = ({
 };
 
 export default BgGradient; 
+

@@ -14,8 +14,10 @@ export const headerNavLinks: LinkGroups = {
       href: "/docs",
     },
     {
-      label: "Atoms",
+      label: "Components",
       href: "/docs/explore",
     },
   ],
 };
+
+

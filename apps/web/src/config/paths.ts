@@ -4,3 +4,5 @@ export const PATHS = {
   registry_json: "/registry/registry.json",
   registry_components: "/registry/components/",
 };
+
+

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "button",
+    "title": "Button",
+    "type": "registry:ui",
+    "description": "Standard button with multiple variants with built in state handling.",
+    "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json",
+        "http://localhost:3000/r/fysk-hooks.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/button.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

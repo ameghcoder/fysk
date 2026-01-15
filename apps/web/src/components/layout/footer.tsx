@@ -10,12 +10,13 @@ import BgGradient from '../effects/bg-gradient'
 
 const footerLinks = {
     product: [
-        { label: "Components", href: "/docs/atoms" }
+        { label: "Components", href: "/docs/components" }
     ],
     resources: [
         { label: "Documentation", href: "/docs" },
     ],
     company: [
+        { label: "About Us", href: "/about" },
         { label: "Star on GitHub", href: "https://github.com/ameghcoder/fysk" },
         { label: "Creator_Profile", href: "https://x.com/yrjdev" }
     ]
@@ -119,3 +120,5 @@ const FooterSection = () => {
 }
 
 export default FooterSection
+
+

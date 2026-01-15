@@ -2,11 +2,10 @@ import {
     Sidebar,
     SidebarContent,
     SidebarGroup,
-    SidebarGroupContent,
     SidebarItem,
     SidebarProvider,
 } from "@fysk/ui"
-import { Home, Library, Music, Settings } from "lucide-react"
+import { Library, Music } from "lucide-react"
 
 export default function SidebarFloating() {
     return (
@@ -28,3 +27,5 @@ export default function SidebarFloating() {
         </SidebarProvider>
     )
 }
+
+

@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { SUSE } from "next/font/google";
 import "./globals.css";
-import { FyskProvider } from "@fysk/ui";
-import { ThemeProvider } from "next-themes";
+import { Providers } from "@/components/providers";
 
 const suseSans = SUSE({
   variable: "--font-suse-sans",
@@ -10,9 +9,10 @@ const suseSans = SUSE({
 });
 
 export const metadata: Metadata = {
-  title: "Fysk - Smart Component library",
+  title: "Fysk - Stateful Component library",
   description:
-    "Fysk is a smart component library that helps you build beautiful and responsive UIs with ease. Built top on ShadCN eco-system and supports ShadCN CLI to install components.",
+    "Fysk is a Stateful component library that helps you build beautiful and responsive UIs with ease. Built top on ShadCN eco-system and supports ShadCN CLI to install components.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   icons: {
     icon: "/favicon.ico",
   },
@@ -35,12 +35,12 @@ export default function RootLayout({
       <body
         className={`${suseSans.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <FyskProvider>
-            {children}
-          </FyskProvider>
-        </ThemeProvider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
 }
+
+

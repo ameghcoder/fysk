@@ -4,7 +4,7 @@ import { Send, Bold, Italic } from "lucide-react"
 export default function TextareaToolbar() {
     return (
         <Textarea
-            variant="filled"
+            variant="glass"
             placeholder="Write a comment..."
             header={
                 <div className="flex gap-2">
@@ -18,7 +18,7 @@ export default function TextareaToolbar() {
             }
             footer={
                 <div className="flex justify-end">
-                    <Button size="sm" variant="outline">
+                    <Button size="sm" variant="glass">
                         <Send className="mr-2 size-4" />
                         <span>Post Comment</span>
                     </Button>
@@ -27,3 +27,5 @@ export default function TextareaToolbar() {
         />
     )
 }
+
+

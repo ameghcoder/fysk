@@ -1,0 +1,148 @@
+---
+title: "Empty"
+description: "A placeholder component for empty states, featuring premium visual variants, custom icons, and built-in typography handling."
+---
+
+## Preview
+
+<ComponentPreview
+  name="Empty"
+  file="empty"
+  basePath="/registry/components/empty"
+  controls={{
+    variant: {
+      type: "select",
+      options: ["default", "glass", "outline", "ghost"],
+      default: "default",
+    },
+    size: {
+      type: "select",
+      options: ["sm", "md", "lg"],
+      default: "md",
+    },
+    title: { type: "text", default: "No Results Found" },
+    description: {
+      type: "text",
+      default:
+        "We couldn't find what you were looking for. Please try a different search or filter.",
+    },
+  }}
+>
+  <Empty
+    title="No Results Found"
+    description="We couldn't find what you were looking for. Please try a different search or filter."
+    action={<Button>Clear Search</Button>}
+  />
+</ComponentPreview>
+
+## Installation
+
+<CodeBlock
+  language="bash"
+  code="npx shadcn@latest add https://fysk.dev/r/empty.json"
+/>
+
+## Usage
+
+<CodeBlock
+  language="tsx"
+  code={`import { Empty } from "@/components/ui"
+
+<Empty 
+  title="No files" 
+  description="Upload your first file to get started." 
+/>`}
+/>
+
+## Examples
+
+### Glass Variant
+
+The glass variant features a subtle frosted background, consistent with other glass components in Fysk.
+
+<ComponentPreview file="empty-example-glass-01">
+  <Empty
+    variant="glass"
+    title="Ready to Start?"
+    description="Your dashboard is currently empty. Connect your first integration to see insights."
+    action={<Button variant="glass">Connect Integration</Button>}
+  />
+</ComponentPreview>
+
+### Minimal (Ghost)
+
+A subtle, clean empty state without borders or background, ideal for smaller sections.
+
+<ComponentPreview file="empty-example-minimal-01">
+  <Empty
+    variant="ghost"
+    size="sm"
+    title="No Comments"
+    description="Be the first to start the conversation."
+  />
+</ComponentPreview>
+
+### Override Icons
+
+While variants come with a default icon, you can override it with any React node.
+
+<ComponentPreview file="empty-example-glass-01">
+  <Empty
+    variant="glass"
+    icon={<PlugZap className="size-6 text-amber-500" />}
+    title="Connect Integration"
+    description="Connect your favorite tools to unlock powerful automation features."
+    action={
+      <Button
+        variant="glass"
+        className="bg-amber-500/10 text-amber-600 hover:bg-amber-500/20 border-amber-200/50"
+      >
+        Connect Now
+      </Button>
+    }
+  />
+</ComponentPreview>
+
+## Features
+
+<Typography
+  variant="list"
+  data={[
+    <Typography key="styles">
+      <Typography variant="strong">Consistent Styles:</Typography> Designed to
+      match the
+      <Typography variant="inlineCode">Button</Typography> and{" "}
+      <Typography variant="inlineCode">Input</Typography> aesthetic with rounded
+      corners and muted colors.
+    </Typography>,
+    <Typography key="variants">
+      <Typography variant="strong">Variants:</Typography> Includes
+      <Typography variant="inlineCode">default</Typography> (dashed),
+      <Typography variant="inlineCode">outline</Typography>,
+      <Typography variant="inlineCode">glass</Typography>, and
+      <Typography variant="inlineCode">ghost</Typography> styles.
+    </Typography>,
+    <Typography key="flexible-sizing">
+      <Typography variant="strong">Flexible Sizing:</Typography> Support for{" "}
+      <Typography variant="inlineCode">sm</Typography>,{" "}
+      <Typography variant="inlineCode">md</Typography>, and{" "}
+      <Typography variant="inlineCode">lg</Typography> footprints.
+    </Typography>,
+  ]}
+/>
+
+## Props
+
+| Prop          | Type                                           | Default     | Description                         |
+| ------------- | ---------------------------------------------- | ----------- | ----------------------------------- |
+| `variant`     | `"default" \| "glass" \| "outline" \| "ghost"` | `"default"` | The visual style of the container.  |
+| `size`        | `"sm" \| "md" \| "lg"`                         | `"md"`      | Adjusts padding and minimum height. |
+| `title`       | `string`                                       | -           | The primary headline.               |
+| `description` | `string`                                       | -           | Supporting explanatory text.        |
+| `icon`        | `React.Node`                                   | -           | Custom icon override.               |
+| `action`      | `React.Node`                                   | -           | Call-to-action slot.                |
+
+<Typography variant="blockquote">
+  The component is fully responsive and handles focus/accessibility states
+  automatically.
+</Typography>

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { AestheticHeader } from "@/components/layout/header";
+import FooterSection from "@/components/layout/footer";
 import GradualBlurMemo from "@/components/effects/gradual-blur";
 
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "Fysk - Smart Component library",
-        description: "Fysk is a smart component library that helps you build beautiful and responsive UIs with ease. Built top on ShadCN eco-system and supports ShadCN CLI to install components.",
+        title: "Fysk - Stateful Component library",
+        description: "Fysk is a Stateful component library that helps you build beautiful and responsive UIs with ease. Built top on ShadCN eco-system and supports ShadCN CLI to install components.",
         keywords: [
             "React",
             "Next.js",
@@ -14,7 +15,7 @@ export async function generateMetadata(): Promise<Metadata> {
             "Shadcn UI",
             "Component Library",
             "UI Components",
-            "Smart Components",
+            "Stateful Components",
             "Frontend Development",
             "Design System",
             "TypeScript",
@@ -34,6 +35,7 @@ export default function RootLayout({
             <div className="relative">
                 {children}
             </div>
+            <FooterSection />
             <GradualBlurMemo
                 target="page"
                 position="bottom"

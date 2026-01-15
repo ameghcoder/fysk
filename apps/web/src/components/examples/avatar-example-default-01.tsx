@@ -5,3 +5,5 @@ export default function AvatarDemo() {
         <Avatar src="https://github.com/_wrong_image_.png" fallback="AC" />
     )
 }
+
+

@@ -17,6 +17,12 @@ import {
   TabsContent,
   Progress,
   Empty,
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
   Form,
   FormItem,
   FormLabel,
@@ -52,7 +58,7 @@ import {
   PaginationPrevious,
   PaginationFirst,
   PaginationLast,
-  SmartPagination,
+  StatefulPagination,
   Sidebar,
   SidebarHeader,
   SidebarFooter,
@@ -73,7 +79,8 @@ import {
 } from "@fysk/ui";
 import ComponentPreview from "@/components/layout/component-preview";
 import CodeBlock from "@/components/layout/code-block";
-import { PlusIcon, Mail, Search, Bold, Italic, Send } from "lucide-react";
+import Prerequisites from "@/components/docs/prerequisites";
+import { PlusIcon, Mail, Search, Bold, Italic, Send, PlugZap } from "lucide-react";
 
 // Demo Components
 import FormExampleDefault01 from "@/components/examples/form-example-default-01";
@@ -81,11 +88,14 @@ import FormDemo from "@/components/examples/form-example-preview-01";
 import TypographyVariants from "@/components/examples/typography-example-variants-01";
 import BadgeDemo from "@/components/examples/badge-example-default-01";
 import ButtonVariants from "@/components/examples/button-example-variants-01";
+import ButtonDemo from "@/components/examples/button-example-default-01";
 import ButtonSizes from "@/components/examples/button-example-sizes-01";
 import ButtonIcons from "@/components/examples/button-example-icons-01";
 import ButtonAsChild from "@/components/examples/button-example-as-child-01";
 import ButtonStates from "@/components/examples/button-example-states-01";
 import EmptyDemo from "@/components/examples/empty-example-default-01";
+import EmptyGlassDemo from "@/components/examples/empty-example-glass-01";
+import EmptyMinimalDemo from "@/components/examples/empty-example-minimal-01";
 import AvatarDemo from "@/components/examples/avatar-example-default-01";
 import InputDemo from "@/components/examples/input-example-default-01";
 import OTPInputDemo from "@/components/examples/input-otp-example-default-01";
@@ -105,15 +115,18 @@ import TooltipVariants from "@/components/examples/tooltip-example-variants-01";
 import TabsVariants from "@/components/examples/tabs-example-variants-01";
 import SwitchVariants from "@/components/examples/switch-example-variants-01";
 import ProgressVariants from "@/components/examples/progress-example-variants-01";
-import PaginationSmart from "@/components/examples/pagination-example-smart-01";
+import StatefulPaginationDemo from "@/components/examples/pagination-example-stateful-01";
 import KbdVariants from "@/components/examples/kbd-example-variants-01";
 import InputOTPVariants from "@/components/examples/input-otp-example-variants-01";
 import InputVariants from "@/components/examples/input-example-variants-01";
 import AvatarVariants from "@/components/examples/avatar-example-variants-01";
+import TextareaStatefulDemo from "@/components/examples/textarea-example-stateful-01";
+
 import { JSXElementConstructor, ReactElement } from "react";
+import InputInteractiveIcon from "@/components/examples/input-example-interactive-01";
 
 // Dynamic path based on your requirement
-const DOCS_PATH = path.join(process.cwd(), "src/app/(docs)/docs/atoms/react");
+const DOCS_PATH = path.join(process.cwd(), "src/app/(docs)/docs/components/react");
 
 // Helper to slugify text for IDs
 function slugify(text: string) {
@@ -176,6 +189,7 @@ export async function getDocData(slug: string) {
     },
     components: {
       // icons
+      PlugZap,
       Mail,
       Search,
       PlusIcon,
@@ -183,15 +197,20 @@ export async function getDocData(slug: string) {
       Bold,
       Italic,
       // Blocks
+      Prerequisites,
       FormExampleDefault01,
+      InputInteractiveIcon,
       FormDemo,
       BadgeDemo,
       ButtonVariants,
+      ButtonDemo,
       ButtonSizes,
       ButtonIcons,
       ButtonAsChild,
       ButtonStates,
       EmptyDemo,
+      EmptyGlassDemo,
+      EmptyMinimalDemo,
       AvatarDemo,
       AvatarVariants,
       InputDemo,
@@ -201,7 +220,7 @@ export async function getDocData(slug: string) {
       KbdDemo,
       KbdVariants,
       PaginationDemo,
-      PaginationSmart,
+      StatefulPaginationDemo,
       ProgressDemo,
       ProgressVariants,
       SelectDemo,
@@ -212,6 +231,7 @@ export async function getDocData(slug: string) {
       TabsVariants,
       TextareaDemo,
       TextareaAutosize,
+      TextareaStatefulDemo,
       TextareaToolbar01,
       TooltipDemo,
       TooltipVariants,
@@ -231,6 +251,12 @@ export async function getDocData(slug: string) {
       TabsContent,
       Progress,
       Empty,
+      Card,
+      CardHeader,
+      CardTitle,
+      CardDescription,
+      CardContent,
+      CardFooter,
       Form,
       FormItem,
       FormLabel,
@@ -266,7 +292,7 @@ export async function getDocData(slug: string) {
       PaginationPrevious,
       PaginationFirst,
       PaginationLast,
-      SmartPagination,
+      StatefulPagination,
       Sidebar,
       SidebarHeader,
       SidebarFooter,
@@ -308,3 +334,5 @@ export async function getDocData(slug: string) {
     toc,
   };
 }
+
+

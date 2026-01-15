@@ -1,15 +1,16 @@
 {
     "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-    "name": "atom-name",
-    "title": "Atom Name",
+    "name": "Component-name",
+    "title": "Component Name",
     "type": "registry:ui",
     "dependencies": [],
     "registryDependencies": [],
     "files": [
         {
-            "path": "fysk/atom-name.tsx",
+            "path": "fysk/Component-name.tsx",
             "type": "registry:ui",
             "content": "--content-goes-here--"
         }
     ]
 }
+

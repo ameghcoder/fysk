@@ -6,3 +6,5 @@ export default function OTPInputDemo(props: React.ComponentProps<typeof OTPInput
         <OTPInput {...props} />
     )
 }
+
+

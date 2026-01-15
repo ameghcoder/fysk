@@ -1,0 +1,22 @@
+{
+    "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+    "name": "switch",
+    "title": "Switch",
+    "type": "registry:ui",
+    "description": "A control that allows the user to toggle between checked and not checked.",
+    "dependencies": [
+        "@radix-ui/react-switch",
+        "class-variance-authority"
+    ],
+    "registryDependencies": [
+        "utils",
+        "http://localhost:3000/r/fysk-provider.json",
+        "http://localhost:3000/r/fysk-hooks.json"
+    ],
+    "files": [
+        {
+            "path": "fysk/switch.tsx",
+            "type": "registry:ui"
+        }
+    ]
+}

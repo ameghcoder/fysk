@@ -9,3 +9,5 @@ export const useUIStore = create<UIStoreProps>((set) => ({
   isSidebarOpened: false,
   setIsSidebarOpened: (value: boolean) => set({ isSidebarOpened: value }),
 }));
+
+

@@ -1,10 +1,11 @@
 import { Button } from "@fysk/ui"
+import { Search } from "lucide-react"
 
 export default function ButtonSizes() {
     return (
         <div className="flex flex-wrap items-center gap-4">
             <Button size="icon">
-                <span className="text-lg">🔍</span>
+                <Search className="size-4" />
             </Button>
             <Button size="sm">Small</Button>
             <Button size="md">Medium</Button>

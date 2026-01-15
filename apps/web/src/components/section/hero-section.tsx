@@ -89,12 +89,12 @@ const HeroSection = () => {
         <div className="mb-10 max-w-7xl">
           <motion.div variants={fadeInUp}>
             <Typography variant="h1" className="font-suse-mono font-bold tracking-tight mb-2 selection:bg-white selection:text-black leading-[1.1]">
-              Finally, Use Better.
+              Fysk.
             </Typography>
           </motion.div>
           <motion.div variants={fadeInUp}>
             <Typography variant="h2" className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white/30 selection:bg-white selection:text-black/30 leading-[1.1]">
-              Unlock a UI Library with <br /> Built-in Brain.
+              Stateful components with <br /> beautiful micro-interactions.
             </Typography>
           </motion.div>
         </div>
@@ -107,7 +107,7 @@ const HeroSection = () => {
           {/* Left Tagline */}
           <div className="lg:max-w-xl">
             <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/40 leading-relaxed ">
-              Stop fighting your components. fysk pairs world-class aesthetics with a thoughtful API, zero-runtime overhead, and type-safety that anticipates your next move
+              One `state` prop handles loading, success, and error — with smooth animations. Zero boilerplate. Built on Radix UI and Tailwind CSS.
             </p>
           </div>
 
@@ -141,3 +141,4 @@ const HeroSection = () => {
 }
 
 export default HeroSection
+
